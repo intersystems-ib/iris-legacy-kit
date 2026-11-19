@@ -1,21 +1,21 @@
 {
   "iris-interop-dev": {
-    "version": "v0.27.0-interop",
+    "version": "v0.27.1-interop",
     "issues": "intersystems-ib/iris-interop-dev",
-    "reports": "0.27.0",
+    "reports": "0.27.1",
     "url": "https://github.com/intersystems-ib/iris-interop-dev/releases/download/{version}/{asset}",
     "assets": {
       "darwin-arm64": {
         "name": "iris-interop-dev-macos-arm64",
-        "sha256": "3ebf3043c32d67d7c2d42e907e5e2092f47d750e86e9c9c2df3391150625fcb6"
+        "sha256": "5dd6649692d57e9c69c98014bfde3baf50c2b24fffdca5a6589061f485e7e1e7"
       },
       "darwin-x86_64": {
         "name": "iris-interop-dev-macos-x64",
-        "sha256": "17b247aaf57cf0786f8ce9f228d65bf9777521856b29bc65e10df6037ac99e58"
+        "sha256": "e65ac34a5bf38138f268f0ec1d1d0e93c1777440fbe6db22791fcfbc999510cf"
       },
       "linux-x86_64": {
         "name": "iris-interop-dev-linux-x64-musl",
-        "sha256": "48ed499a57c069cdf0152376d8418793256dc760a195d3aac10962e80aaa3295"
+        "sha256": "59659e3b1c8c07fd8f3afba0cac80bf5cc68964851289b563cdec26fb365a788"
       }
     }
   },
