@@ -1,0 +1,106 @@
+[
+  {
+    "tag_name": "v0.4.3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-29T21:30:54Z",
+    "html_url": "https://github.com/intersystems-community/ascot/releases/tag/v0.4.3",
+    "body": "<!-- Release notes generated using configuration in .github/release.yml at v0.4.3 -->\n\n## What's Changed\n* Name the receiver, not the unseen ancestor, in the unconfirmed-member hint by @isc-klu in https://github.com/intersystems-community/ascot/pull/122\n* Let a host swap the workspace's server or style by @isc-klu in https://github.com/intersystems-community/ascot/pull/123\n* Release 0.4.3 by @isc-klu in https://github.com/intersystems-community/ascot/pull/124\n\n\n**Full Changelog**: https://github.com/intersystems-community/ascot/compare/v0.4.2...v0.4.3",
+    "assets": [
+      {
+        "name": "ascot-cli-aarch64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:4f21a8698ac27802f1f160545121c5c35a26d9aa0e7fd0358098a98c2f19305a"
+      },
+      {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "digest": "sha256:ef023746622bee6dcfdb8457a2a6cb89514fa0746399a3ab474e8de3d11956ac"
+      },
+      {
+        "name": "ascot-cli-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:6a01a1fe15864252de643ccfe5f950d5198c76851dae4fe682b38bdede1fa498"
+      },
+      {
+        "name": "ascot-cli-x86_64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:0eb09ac321d6cca4d58431ce7a2085a75f41fb9bc51651224306b7776938165d"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.4.2",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-28T22:26:14Z",
+    "html_url": "https://github.com/intersystems-community/ascot/releases/tag/v0.4.2",
+    "body": "<!-- Release notes generated using configuration in .github/release.yml at v0.4.2 -->\n\n## What's Changed\n* Push the formula straight to the tap by @isc-klu in https://github.com/intersystems-community/ascot/pull/110\n* Keep one IRIS session per connection, and end it by @isc-klu in https://github.com/intersystems-community/ascot/pull/113\n* Report NEW in a procedure block as an error by @isc-klu in https://github.com/intersystems-community/ascot/pull/111\n* Move the diagnostic tests to the corpus by @isc-klu in https://github.com/intersystems-community/ascot/pull/115\n* Drop three tests that only exercised a mocked IRIS by @isc-klu in https://github.com/intersystems-community/ascot/pull/116\n* Follow IRIS on NEW of parameters, method-body defines and the implicit includes by @isc-klu in https://github.com/intersystems-community/ascot/pull/117\n* Assume nothing about a nested label's returns, and refuse $$ on a label without a formal list by @isc-klu in https://github.com/intersystems-community/ascot/pull/118\n* Look members up by namespace, typed by what the namespace holds by @isc-klu in https://github.com/intersystems-community/ascot/pull/114\n* Follow the corpus: arities, severities, empty subscripts, Goto targets by @isc-klu in https://github.com/intersystems-community/ascot/pull/120\n* Resolve the implicit class includes once, and parse each IRIS include once by @isc-klu in https://github.com/intersystems-community/ascot/pull/121\n* Release 0.4.2 by @isc-klu in https://github.com/intersystems-community/ascot/pull/119\n\n\n**Full Changelog**: https://github.com/intersystems-community/ascot/compare/v0.4.1...v0.4.2",
+    "assets": [
+      {
+        "name": "ascot-cli-aarch64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:671669a54b4f36a2c9a221c81f5408a211ce1a6b50eda23ea9b59c1f60b5e714"
+      },
+      {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "digest": "sha256:e7d5d01586cc6ff786c8f1be8de582a4201a6f4cdd8351087e175e49f21d52ec"
+      },
+      {
+        "name": "ascot-cli-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:d5e84156882b6ec13715bc07b03992a69582e3c8e111d7f753d81c6800222980"
+      },
+      {
+        "name": "ascot-cli-x86_64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:111d6e17b620c62d31ce525b5ec108c9dcacef516f8a9ecb9c0d926600a9e995"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.4.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-27T22:04:51Z",
+    "html_url": "https://github.com/intersystems-community/ascot/releases/tag/v0.4.1",
+    "body": "<!-- Release notes generated using configuration in .github/release.yml at v0.4.1 -->\n\n## What's Changed\n* Run CI before releasing by @isc-klu in https://github.com/intersystems-community/ascot/pull/104\n* Document installing from Homebrew by @isc-klu in https://github.com/intersystems-community/ascot/pull/105\n* Ask for the operating system in a bug report by @isc-klu in https://github.com/intersystems-community/ascot/pull/106\n* Check a macro call's argument count against its definition by @isc-klu in https://github.com/intersystems-community/ascot/pull/107\n* Catch more of what IRIS refuses to compile by @isc-klu in https://github.com/intersystems-community/ascot/pull/108\n\n\n**Full Changelog**: https://github.com/intersystems-community/ascot/compare/v0.4.0...v0.4.1",
+    "assets": [
+      {
+        "name": "ascot-cli-aarch64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:1e8ba234d4a10211a5e4bc410fc4189bdca88ac7b83e6a03a7316d37352dccc3"
+      },
+      {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "digest": "sha256:0a81f7624539b5bf6e47c8df5a7a5c29d421edf814119ba064c87595aabbfe4b"
+      },
+      {
+        "name": "ascot-cli-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:c39ee6d32bc13653b74f948ca1a4e44a05d66129c4af47e440234450ef95f806"
+      },
+      {
+        "name": "ascot-cli-x86_64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:7db4ce93776a7ae5525f30ab36ed7fb34907f8ebe38ab5046b350ab9e67822d3"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.4.0",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-27T17:30:41Z",
+    "html_url": "https://github.com/intersystems-community/ascot/releases/tag/v0.4.0",
+    "body": "<!-- Release notes generated using configuration in .github/release.yml at v0.4.0 -->\n\n## What's Changed\n* Document Windows build prerequisites and point to the IRIS options by @isc-klu in https://github.com/intersystems-community/ascot/pull/93\n* Give the host a high-level and a low-level interface to IRIS by @isc-klu in https://github.com/intersystems-community/ascot/pull/92\n* Resolve members through one lookup, in IRIS's order by @isc-klu in https://github.com/intersystems-community/ascot/pull/96\n* Default `ascot declare` to ~/.ascot and record the IRIS version by @isc-klu in https://github.com/intersystems-community/ascot/pull/94\n* Trust the OS's certificate store by @isc-klu in https://github.com/intersystems-community/ascot/pull/99\n* Carry a class's Inheritance keyword through IRIS's class info by @isc-klu in https://github.com/intersystems-community/ascot/pull/100\n* Open a Homebrew tap PR on release by @isc-klu in https://github.com/intersystems-community/ascot/pull/91\n* Resolve IRIS classes like workspace classes by @isc-klu in https://github.com/intersystems-community/ascot/pull/97\n* Install ascot on Linux through the Homebrew tap too by @isc-klu in https://github.com/intersystems-community/ascot/pull/102\n* Mask the optional arguments IRIS's dictionary leaves without defaults by @isc-klu in https://github.com/intersystems-community/ascot/pull/103\n* Release 0.4.0 by @isc-klu in https://github.com/intersystems-community/ascot/pull/101\n\n\n**Full Changelog**: https://github.com/intersystems-community/ascot/compare/v0.3.1...v0.4.0",
+    "assets": [
+      {
+        "name": "ascot-cli-aarch64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:451bfa52861188b2ead34b187fa6b9f833d620912157bbf00deb2455c7380b0f"
+      },
+      {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "digest": "sha256:533f08612e0c1eebcc7dcde7a746e0fa3c302016ebb2af9fd5d3fc6a700220f2"
+      },
+      {
+        "name": "ascot-cli-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:bd278e0f8cff4d30d0a17305ac718da8f18e678c15b03d4438aea517c63f1620"
+      },
+      {
+        "name": "ascot-cli-x86_64-unknown-linux-gnu.tar.gz",
+        "digest": "sha256:7e14aa26efbadd9f95bff26dc46c2f810fa49d37e5caa9834f19ed01cb187178"
+      }
+    ]
+  }
+]

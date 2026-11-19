@@ -1,0 +1,28 @@
+{
+  "//": "Merged into the project .claude/settings.json by /iris-legacy:bootstrap. Allowed without a prompt: the MCP tools that only read (annotated readOnly by iris-interop-dev), running tests, and read-only git. iris_execute, iris_doc (it can write) and iris_compile still ask.",
+  "allow": [
+    "mcp__plugin_iris-legacy_iris__check_config",
+    "mcp__plugin_iris-legacy_iris__compare_document",
+    "mcp__plugin_iris-legacy_iris__compare_namespace",
+    "mcp__plugin_iris-legacy_iris__docs_introspect",
+    "mcp__plugin_iris-legacy_iris__iris_doc_search",
+    "mcp__plugin_iris-legacy_iris__iris_get_log",
+    "mcp__plugin_iris-legacy_iris__iris_info",
+    "mcp__plugin_iris-legacy_iris__iris_macro",
+    "mcp__plugin_iris-legacy_iris__iris_search",
+    "mcp__plugin_iris-legacy_iris__iris_symbols",
+    "mcp__plugin_iris-legacy_iris__iris_symbols_local",
+    "mcp__plugin_iris-legacy_iris__iris_test",
+    "Bash(scripts/test.sh:*)",
+    "Bash(scripts/check.sh:*)",
+    "Bash(git status:*)",
+    "Bash(git diff:*)",
+    "Bash(git log:*)"
+  ],
+  "deny": [
+    "Read(./.claude/settings.local.json)",
+    "Read(./iris.key)",
+    "Read(./**/*.key)",
+    "Read(./**/*.ISCkey)"
+  ]
+}

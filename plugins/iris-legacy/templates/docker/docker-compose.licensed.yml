@@ -1,0 +1,5 @@
+# Licensed-edition override: the only difference from Community is the license key.
+services:
+  iris:
+    volumes:
+      - ${IRIS_KEY_PATH:-./iris.key}:/usr/irissys/mgr/iris.key:ro

@@ -1,0 +1,20 @@
+{
+  "name": "iris-legacy",
+  "displayName": "IRIS legacy kit",
+  "version": "0.5.0",
+  "description": "Claude Code for legacy InterSystems IRIS code (routines and globals): pinned tools, legacy-routine skills, and a compile-and-lint edit loop",
+  "author": {
+    "name": "Pierre-Yves Duquesnoy",
+    "url": "https://github.com/intersystems-ib"
+  },
+  "repository": "https://github.com/intersystems-ib/iris-legacy-kit",
+  "keywords": [
+    "intersystems",
+    "iris",
+    "objectscript",
+    "legacy",
+    "routines",
+    "globals"
+  ],
+  "license": "MIT"
+}

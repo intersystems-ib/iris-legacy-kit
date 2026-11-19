@@ -1,0 +1,28 @@
+ROUTINE OMSTOCK
+OMSTOCK ; OMS stock reservation
+ ; 2009-05-02 MK  stock and movement history change together, in a transaction
+ quit
+
+RESERVE(sku, qty) public {
+    // take qty of sku out of stock for an order line; 1 if done, 0 if not
+    tstart
+    lock +^PROD(sku):5
+    else  quit 0
+    set qoh = $piece(^PROD(sku), "^", 3)
+    if qoh < qty {
+        trollback 1
+        lock -^PROD(sku)
+        quit 0
+    }
+    set $piece(^PROD(sku), "^", 3) = qoh - qty
+    set m = $order(^PROD(sku, "M", ""), -1) + 1
+    set ^PROD(sku, "M", m) = (+$horolog) _ "^" _ (-qty) _ "^RESERVE"
+    tcommit
+    lock -^PROD(sku)
+    quit 1
+}
+
+RELEASE(sku, qty) public {
+    // put qty of sku back into stock (cancelled order line)
+    do ADJ^OMPROD(sku, qty, "RELEASE")
+}

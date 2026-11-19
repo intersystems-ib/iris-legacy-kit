@@ -1,0 +1,5 @@
+id: quit-inside-open-transaction
+valid:
+  - "MOVE(id) public {\n    tstart\n    lock +^ACCT(id):5\n    if '$test {\n        trollback 1\n        quit 0\n    }\n    set ^ACCT(id)=1\n    tcommit\n    lock -^ACCT(id)\n    quit 1\n}\n"
+invalid:
+  - "MOVE(id) public {\n    tstart\n    lock +^ACCT(id):5\n    else  quit 0\n    set ^ACCT(id)=1\n    tcommit\n    lock -^ACCT(id)\n    quit 1\n}\n"

@@ -1,0 +1,52 @@
+ROUTINE OMORDL
+OMORDL ;ACME/JRB - ORDER LISTINGS ;06/15/1998
+ ;;1.0;OMS;**8,17,25**;Mar 12, 1998
+ ;
+ ; 1998-06-15 JRB  original
+ ; 2005-02-21 MK   RECENT for the menu banner
+ Q
+ ;
+LIST ; interactive: orders by date range
+ N FROM,TO,X
+ S U="^"
+ R !,"From date (DD/MM/YYYY): ",X:300 Q:X=""!(X="^")
+ S FROM=$$IDT^OMUTL(X) I FROM="" W "  ??" G LIST
+ R !,"To date (DD/MM/YYYY, blank=same day): ",X:300 Q:X="^"
+ S TO=$S(X="":FROM,1:$$IDT^OMUTL(X)) I TO="" W "  ??" G LIST
+ D BYDATE,PRT
+ Q
+ ;
+BYDATE ; orders dated FROM through TO
+ ; in:  FROM, TO ($H dates)
+ ; out: ^TMP($J,"OL",n) = order number
+ N D,O,N
+ K ^TMP($J,"OL")
+ S N=0,D=FROM-1
+ F  S D=$O(^SORDX("D",D)) Q:D=""!(D'<TO)  D
+ . S O="" F  S O=$O(^SORDX("D",D,O)) Q:O=""  S N=N+1,^TMP($J,"OL",N)=O
+ Q
+ ;
+BYCUST ; orders of customer CID, newest first
+ ; in:  CID
+ ; out: ^TMP($J,"OL",n) = order number
+ N O,N
+ K ^TMP($J,"OL")
+ S N=0,O="" F  S O=$O(^SORDX("C",CID,O),-1) Q:O=""  S N=N+1,^TMP($J,"OL",N)=O
+ Q
+ ;
+RECENT ; print the N most recent orders, newest first, without the header
+ ; in:  N
+ N O,C
+ S U="^" K ^TMP($J,"OL")
+ S C=0,O="" F  S O=$O(^SORD(O),-1) Q:O=""  Q:C'<N  S C=C+1,^TMP($J,"OL",C)=O
+ G PRT+3
+ ;
+PRT ; print the orders listed in ^TMP($J,"OL")
+ W !,"ORDER",?8,"DATE",?20,"CUSTOMER",?52,"STATUS",?64,"     TOTAL"
+ W !,"-----",?8,"----------",?20,"------------------------------",?52,"---------",?64,"----------"
+ N I,O,X,K S I=0,K=0
+ F  S I=$O(^TMP($J,"OL",I)) Q:'I  S O=^(I),X=^SORD(O),K=K+1 D
+ . W !,O,?8,$$FDT^OMUTL($P(X,U,2)),?20,$E($P($G(^CUST(+X)),U),1,30),?52,$$OSTAT^OMUTL($P(X,U,3)),?64,$J($P(X,U,4),10,2)
+ W !,K," order(s)"
+ K ^TMP($J,"OL")
+ Q

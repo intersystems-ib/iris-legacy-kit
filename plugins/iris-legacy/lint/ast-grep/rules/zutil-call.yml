@@ -1,0 +1,8 @@
+id: zutil-call
+language: cosroutine
+severity: warning
+message: "ZUTIL call (the ZU / ZUTIL intrinsic function): deprecated, and its numeric codes are undocumented in current releases."
+note: "Use the documented replacement, for example $NAMESPACE for $ZU(5), or the matching %SYSTEM class method."
+rule:
+  kind: system_defined_function
+  regex: '^\$(?i:zutil|zu)\('

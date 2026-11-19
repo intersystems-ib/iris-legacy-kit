@@ -1,0 +1,26 @@
+ROUTINE OMPROD
+OMPROD ;ACME/JRB - PRODUCTS AND STOCK ;05/11/1998
+ ;;1.0;OMS;**6,14**;Mar 12, 1998
+ Q
+ ;
+ADJ(SKU,QTY,WHY) ; adjust stock on hand of SKU by QTY (negative = issue)
+ N M
+ L +^PROD(SKU)
+ S $P(^PROD(SKU),"^",3)=$P(^PROD(SKU),"^",3)+QTY
+ S M=$O(^PROD(SKU,"M",""),-1)+1,^PROD(SKU,"M",M)=(+$H)_"^"_QTY_"^"_$G(WHY)
+ L -^PROD(SKU)
+ Q
+ ;
+LOW ; interactive: active products at or below their reorder level
+ N SKU,X
+ S U="^"
+ W !,"SKU",?8,"DESCRIPTION",?42,"ON HAND",?52,"REORDER"
+ S SKU="" F  S SKU=$O(^PROD(SKU)) Q:SKU=""  S X=^(SKU) I $P(X,U,5)="A",$P(X,U,3)'>$P(X,U,4) W !,SKU,?8,$E($P(X,U),1,32),?42,$J($P(X,U,3),7),?52,$J($P(X,U,4),7)
+ Q
+ ;
+LIST ; all products
+ ; out: ^TMP($J,"PL",sku) = description ^ price ^ on hand
+ N SKU
+ K ^TMP($J,"PL")
+ S SKU="" F  S SKU=$O(^PROD(SKU)) Q:SKU=""  S ^TMP($J,"PL",SKU)=$P(^PROD(SKU),"^",1,3)
+ Q

@@ -1,0 +1,122 @@
+[
+  {
+    "tag_name": "v0.27.0-interop",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-02T14:23:17Z",
+    "html_url": "https://github.com/intersystems-ib/iris-interop-dev/releases/tag/v0.27.0-interop",
+    "body": "Streamlined **iris-interop-dev** MCP server (interop-focused fork of iris-agentic-dev).\n\n| platform | asset |\n|---|---|\n| macOS, Apple Silicon | `iris-interop-dev-macos-arm64` |\n| macOS, Intel | `iris-interop-dev-macos-x64` |\n| Linux x64 | `iris-interop-dev-linux-x64` |\n| Linux x64, older glibc (AL2023, RHEL 8-9, Debian 12) | `iris-interop-dev-linux-x64-musl` |\n| Linux arm64 (Graviton, arm64 runners, arm64 Docker VMs) | `iris-interop-dev-linux-arm64` |\n| Linux arm64, older glibc | `iris-interop-dev-linux-arm64-musl` |\n| Windows x64 | `iris-interop-dev-windows-x64.exe` |\n\n**Workshop VM (Windows):** download `iris-interop-dev-windows-x64.exe`, place it at\n`C:\\iris-interop-dev\\iris-interop-dev.exe`, then register the MCP:\n```\nclaude mcp add --scope user iris-interop-dev --env IRIS_HOST=localhost --env IRIS_WEB_PORT=80 --env IRIS_WEB_PREFIX=irishealth --env IRIS_USERNAME=_SYSTEM --env IRIS_PASSWORD=SYS --env IRIS_NAMESPACE=USER -- C:/iris-interop-dev/iris-interop-dev.exe mcp\n```\nTool names are identical to iris-agentic-dev, so the iris-interop-skills work unchanged.\n\n\n## What's Changed\n* feat(iris_global): read globals in the routines profile — subscripts, $DATA and bounded walks (#532) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/550\n* feat(iris_global): write one node, and refuse the globals IRIS owns (#532) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/552\n* feat(global): delete a global only through the preview that showed it (#532) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/554\n* chore(deps): bump tokio from 1.53.1 to 1.53.3 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/544\n* chore(deps): bump which from 8.0.5 to 8.0.6 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/545\n* chore(deps): bump schemars from 1.2.1 to 1.2.3 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/547\n* chore(deps): bump uuid from 1.26.0 to 1.28.0 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/548\n* chore(deps): bump rmcp 1.6 to 3.8, pinning the wire shape it keeps by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/560\n* feat(release): publish Linux arm64, and refuse a wrong-arch download instead of verifying it by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/561\n* fix(hook): bound post-edit compiles to the project",
+    "assets": [
+      {
+        "name": "iris-interop-dev-linux-arm64",
+        "digest": "sha256:cb4efd0235588cfb553f77ab84c060aedf5d222ba5505ceeba65ed0273f505f5"
+      },
+      {
+        "name": "iris-interop-dev-linux-arm64-musl",
+        "digest": "sha256:0824c7d080044596f334dcd35cf20c6fe3a97c77e1ce766d385d15e5fdcd1816"
+      },
+      {
+        "name": "iris-interop-dev-linux-x64",
+        "digest": "sha256:be2935cb18a6ec6029832b6afead1f9e6db38edfb1855d7b8f56e3e5f628309e"
+      },
+      {
+        "name": "iris-interop-dev-linux-x64-musl",
+        "digest": "sha256:48ed499a57c069cdf0152376d8418793256dc760a195d3aac10962e80aaa3295"
+      },
+      {
+        "name": "iris-interop-dev-macos-arm64",
+        "digest": "sha256:3ebf3043c32d67d7c2d42e907e5e2092f47d750e86e9c9c2df3391150625fcb6"
+      },
+      {
+        "name": "iris-interop-dev-macos-x64",
+        "digest": "sha256:17b247aaf57cf0786f8ce9f228d65bf9777521856b29bc65e10df6037ac99e58"
+      },
+      {
+        "name": "iris-interop-dev-windows-x64.exe",
+        "digest": "sha256:eb840dfc6b84da5f806eb65b702aba254282a70a6bd57601855f5e110b645cad"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.26.0-interop",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-22T15:12:06Z",
+    "html_url": "https://github.com/intersystems-ib/iris-interop-dev/releases/tag/v0.26.0-interop",
+    "body": "Streamlined **iris-interop-dev** MCP server (interop-focused fork of iris-agentic-dev).\n\n| platform | asset |\n|---|---|\n| macOS, Apple Silicon | `iris-interop-dev-macos-arm64` |\n| macOS, Intel | `iris-interop-dev-macos-x64` |\n| Linux x64 | `iris-interop-dev-linux-x64` |\n| Linux x64, older glibc (AL2023, RHEL 8-9, Debian 12) | `iris-interop-dev-linux-x64-musl` |\n| Windows x64 | `iris-interop-dev-windows-x64.exe` |\n\n**Workshop VM (Windows):** download `iris-interop-dev-windows-x64.exe`, place it at\n`C:\\iris-interop-dev\\iris-interop-dev.exe`, then register the MCP:\n```\nclaude mcp add --scope user iris-interop-dev --env IRIS_HOST=localhost --env IRIS_WEB_PORT=80 --env IRIS_WEB_PREFIX=irishealth --env IRIS_USERNAME=_SYSTEM --env IRIS_PASSWORD=SYS --env IRIS_NAMESPACE=USER -- C:/iris-interop-dev/iris-interop-dev.exe mcp\n```\nTool names are identical to iris-agentic-dev, so the iris-interop-skills work unchanged.\n\n\n## What's Changed\n* feat(line_edit): the positional line-edit core (#24) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/277\n* feat(doc_search): documentation search over the live instance, not Algolia (#24 item 065) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/280\n* feat(iris_execute): explain that locals do not survive between calls (#24 item 071) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/279\n* fix(annotations): stop advertising readOnlyHint on tools that write a scratch class, and stop the preflight writing at all (#282) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/283\n* fix(docker_discovery_e2e): a timed-out capture must not become an empty string (#225) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/285\n* test(interop_e2e): make the lookup round-trip actually test the round-trip by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/286\n* test(discovery): cover probe_atelier's positive half, which nothing tested by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/287\n* refactor(discovery): one Atelier fingerprint, one api-level mapping (#288) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/289\n* fix(iris_coverage): run tests through the shared %UnitTest dispatch, not a bare RunTest (#290) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/291\n* fix(ci): the bollard docker-discovery guard reported ok wi",
+    "assets": [
+      {
+        "name": "iris-interop-dev-linux-x64",
+        "digest": "sha256:11bb877236d2051e18bcc6332ffb097cbb6cabfca07d857de99f91ec62dacb5f"
+      },
+      {
+        "name": "iris-interop-dev-linux-x64-musl",
+        "digest": "sha256:e7a9ac9620925e67fa25bd2797ce9472d45d45e20027b97cf9dbcae5046fae37"
+      },
+      {
+        "name": "iris-interop-dev-macos-arm64",
+        "digest": "sha256:44dd178935c7947d53d3a387c828c1f6dce7b60d8b3971fbd2b08c9a77d95743"
+      },
+      {
+        "name": "iris-interop-dev-macos-x64",
+        "digest": "sha256:906a50b299a5e797c7d6087b7af8adf06f0853d12bdf2a872323fdd9d32917d9"
+      },
+      {
+        "name": "iris-interop-dev-windows-x64.exe",
+        "digest": "sha256:88b75edf8ea2528f8c60ed574508c53bf618d69c2bb24a35845da4ebae0fb433"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.25.0-interop",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-19T23:18:28Z",
+    "html_url": "https://github.com/intersystems-ib/iris-interop-dev/releases/tag/v0.25.0-interop",
+    "body": "Streamlined **iris-interop-dev** MCP server (interop-focused fork of iris-agentic-dev).\n\n**Workshop VM (Windows):** download `iris-interop-dev-windows-x64.exe`, place it at\n`C:\\iris-interop-dev\\iris-interop-dev.exe`, then register the MCP:\n```\nclaude mcp add --scope user iris-interop-dev --env IRIS_HOST=localhost --env IRIS_WEB_PORT=80 --env IRIS_WEB_PREFIX=irishealth --env IRIS_USERNAME=_SYSTEM --env IRIS_PASSWORD=SYS --env IRIS_NAMESPACE=USER -- C:/iris-interop-dev/iris-interop-dev.exe mcp\n```\nTool names are identical to iris-agentic-dev, so the iris-interop-skills work unchanged.\n\n\n## What's Changed\n* feat(iris_execute_method): call a ClassMethod directly, with the %Status decoded (#245) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/249\n* fix(iris_macro): repair four actions that never worked, and derive the includes from the document (#247) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/250\n* feat(hl7_schema): name HL7 segments and fields, repeating ones included (#246) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/251\n* ci(e2e): derive the e2e job's targets instead of naming two by hand (#240) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/252\n* feat(iris_table_info): report the stream and id globals (#248) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/253\n* feat(iris_gateway_query): read an external database through a SQL Gateway (#214) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/254\n* fix(docs_introspect): report the dictionary probe, not the world (#242) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/256\n* test(mcp_handshake): assert initialize does not block on discovery (#200) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/257\n* fix(release): upload assets one at a time, and read the release back (#224) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/258\n* test: ratchet the population of self-skipping tests (#255) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/259\n* test: mark the eight self-skipping tests #[ignore], and empty the ratchet (#255) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/260\n* ci: run docker_discovery_e2e on a schedule, so #225 becomes observable (#225) by @PYDuquesnoy in https://github.com/intersystems-ib/i",
+    "assets": [
+      {
+        "name": "iris-interop-dev-linux-x64",
+        "digest": "sha256:f6bf42ccf31456f0799c451f9b24c63e65e727fafb59a77bd5df842e81b28f6e"
+      },
+      {
+        "name": "iris-interop-dev-linux-x64-musl",
+        "digest": "sha256:ef16372a50e5531a04ae256df8ac9d5d07a15ecb05272b9ddc15c2b54d705f50"
+      },
+      {
+        "name": "iris-interop-dev-macos-arm64",
+        "digest": "sha256:9baa1d7a6e2f4655c3d85fe403362960557075a4e61e2271114806e342ec7399"
+      },
+      {
+        "name": "iris-interop-dev-windows-x64.exe",
+        "digest": "sha256:4d4912ce3fdac7e1eb6a98d8d5aaba2aca2a5986c70edbb570bb95019657ef32"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.24.0-interop",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-18T15:21:53Z",
+    "html_url": "https://github.com/intersystems-ib/iris-interop-dev/releases/tag/v0.24.0-interop",
+    "body": "Streamlined **iris-interop-dev** MCP server (interop-focused fork of iris-agentic-dev).\n\n**Workshop VM (Windows):** download `iris-interop-dev-windows-x64.exe`, place it at\n`C:\\iris-interop-dev\\iris-interop-dev.exe`, then register the MCP:\n```\nclaude mcp add --scope user iris-interop-dev --env IRIS_HOST=localhost --env IRIS_WEB_PORT=80 --env IRIS_WEB_PREFIX=irishealth --env IRIS_USERNAME=_SYSTEM --env IRIS_PASSWORD=SYS --env IRIS_NAMESPACE=USER -- C:/iris-interop-dev/iris-interop-dev.exe mcp\n```\nTool names are identical to iris-agentic-dev, so the iris-interop-skills work unchanged.\n\n\n## What's Changed\n* test: repair the e2e targets that no CI job runs (refs #240) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/241\n* fix(iris_doc): STORAGE_STRIP_BLOCKED leads with the fix, not the bypass (#217) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/243\n* chore(deps): bump tree-sitter-objectscript from 1.7.13 to 1.9.19 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/194\n* chore(deps): bump tree-sitter-objectscript-routine from 1.9.16 to 1.9.19 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/198\n* chore(deps): bump serde from 1.0.228 to 1.0.229 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/195\n* chore(deps): bump clap from 4.6.0 to 4.6.6 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/196\n* chore(deps): bump semver from 1.0.27 to 1.0.28 by @dependabot[bot] in https://github.com/intersystems-ib/iris-interop-dev/pull/197\n* release: 0.24.0 — the ObjectScript grammar becomes reachable, and a refusal stops handing out its own bypass (#217, #240) by @PYDuquesnoy in https://github.com/intersystems-ib/iris-interop-dev/pull/244\n\n## New Contributors\n* @dependabot[bot] made their first contribution in https://github.com/intersystems-ib/iris-interop-dev/pull/194\n\n**Full Changelog**: https://github.com/intersystems-ib/iris-interop-dev/compare/v0.23.0-interop...v0.24.0-interop",
+    "assets": [
+      {
+        "name": "iris-interop-dev-linux-x64",
+        "digest": "sha256:e1928ff87c7fac298f06165f9101d0c649237ba71c54f986631edcc1c467bca5"
+      },
+      {
+        "name": "iris-interop-dev-linux-x64-musl",
+        "digest": "sha256:2a785c4e89cc4a45080ca822e29085881dabc74ec02eb260c22efd413d625c6e"
+      },
+      {
+        "name": "iris-interop-dev-macos-arm64",
+        "digest": "sha256:749b852109050092bc324d9b4fe05b209030ac013038ca6a7be0383234afba31"
+      },
+      {
+        "name": "iris-interop-dev-windows-x64.exe",
+        "digest": "sha256:cf0f9b7dfe442a9cddb17c17ed230387e5be6c0e0078b7b3d1d127c335d44a9d"
+      }
+    ]
+  }
+]

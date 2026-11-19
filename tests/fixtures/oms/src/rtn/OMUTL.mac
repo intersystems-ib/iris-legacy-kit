@@ -1,0 +1,58 @@
+ROUTINE OMUTL
+OMUTL ;ACME/JRB - OMS UTILITIES ;03/12/1998
+ ;;1.0;OMS;**2,7,15,23**;Mar 12, 1998
+ ;
+ ; 1998-03-12 JRB  original
+ ; 2001-06-02 MK   NXT uses $INCREMENT (was LOCK, read, set)
+ ; 2004-11-19 MK   country table: added NL, IT
+ ; 2012-09-07 PdV  FMT output transform for amounts
+ Q
+ ;
+UP(X) ; upper case
+ Q $TR(X,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+ ;
+FDT(H) ; $H date -> DD/MM/YYYY
+ Q:$G(H)="" ""
+ Q $ZD(H,4)
+ ;
+IDT(X) ; DD/MM/YYYY -> $H date, "" if not a valid date
+ Q $ZDH(X,4,,,,,,,"")
+ ;
+PAD(X,N) ; X padded with spaces, or cut, to N characters
+ Q $E(X_$J("",N),1,N)
+ ;
+NXT(T) ; next id of type T (CUST, SORD, INVC)
+ Q $I(^OMCTL("SEQ",T))
+ ;
+AUD(ACT,REF) ; audit trail entry
+ N N S N=$I(^OMAUD)
+ S ^OMAUD(N)=$H_"^"_$USERNAME_"^"_ACT_"^"_REF
+ Q
+ ;
+CTRY(C) ; country name for code C, "" if unknown
+ N I,L
+ F I=1:1 S L=$T(CTRYT+I) Q:$P(L,";",3)=""  Q:$P(L,";",3)=C
+ Q $P(L,";",4)
+ ;
+CTRYT ;; countries we trade with (code;name)
+ ;;GB;United Kingdom
+ ;;FR;France
+ ;;ES;Spain
+ ;;DE;Germany
+ ;;NL;Netherlands
+ ;;IT;Italy
+ ;;US;United States
+ ;;
+ ;
+OSTAT(S) ; order status text
+ Q $S(S="N":"New",S="S":"Shipped",S="I":"Invoiced",S="X":"Cancelled",1:"?")
+ ;
+FMT(V) ; amount through the site output transform ^OMCTL("PARM","MONEY") (M code: V in, Y out)
+ N Y S Y=V
+ I $G(^OMCTL("PARM","MONEY"))'="" X ^OMCTL("PARM","MONEY")
+ Q Y
+ ;
+ERR ; error trap: log to the application error log and return to the caller
+ S $ZT=""
+ D BACK^%ETN
+ Q

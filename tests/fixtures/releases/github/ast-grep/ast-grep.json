@@ -1,0 +1,154 @@
+[
+  {
+    "tag_name": "0.51.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-02T05:33:13Z",
+    "html_url": "https://github.com/ast-grep/ast-grep/releases/tag/0.51.1",
+    "body": "- fix(cli): report skipped files and reason in --inspect entity [`#3044`](https://github.com/ast-grep/ast-grep/pull/3044)\n- chore(deps): update rust crate tree-sitter-scala to v0.26.4 [`#3054`](https://github.com/ast-grep/ast-grep/pull/3054)\n- fix(dynamic): only replace metavariable sigils with the expando char [`#3052`](https://github.com/ast-grep/ast-grep/pull/3052)\n- fix(core): keep $ followed by a digit literal in fix templates [`#3045`](https://github.com/ast-grep/ast-grep/pull/3045)\n- fix(deps): update rust-wasm-bindgen monorepo [`#3046`](https://github.com/ast-grep/ast-grep/pull/3046)\n- Fix macOS universal2 wheel matching [`#3050`](https://github.com/ast-grep/ast-grep/pull/3050)\n- chore(deps): update rust crate napi-derive to v3.7.0 [`#3049`](https://github.com/ast-grep/ast-grep/pull/3049)\n- chore(deps): update rust crate napi to v3.16.1 [`#3047`](https://github.com/ast-grep/ast-grep/pull/3047)\n- fix(scan): bind utilDirs utils for --inline-rules and --rules [`#2943`](https://github.com/ast-grep/ast-grep/pull/2943)\n- fix(cli): percent-encode file paths in sarif uri [`#3042`](https://github.com/ast-grep/ast-grep/pull/3042)\n- chore(deps): update dependency node to v26 [`#3043`](https://github.com/ast-grep/ast-grep/pull/3043)\n- chore(deps): update dependency oxlint to v1.90.0 [`#3036`](https://github.com/ast-grep/ast-grep/pull/3036)\n- chore(deps): update astral-sh/setup-uv action to v10.3.3 [`#3040`](https://github.com/ast-grep/ast-grep/pull/3040)\n- chore(deps): update rust crate globset to v0.4.21 [`#3037`](https://github.com/ast-grep/ast-grep/pull/3037)\n- chore(deps): update rust crate ignore to v0.4.34 [`#3038`](https://github.com/ast-grep/ast-grep/pull/3038)\n- chore(deps): update dependency node to v26 [`#3039`](https://github.com/ast-grep/ast-grep/pull/3039)\n- fix(sarif): set the log version to 2.1.0 [`#3035`](https://github.com/ast-grep/ast-grep/pull/3035)\n- fix(cli): escape special characters in github format output [`#3034`](https://github.com/ast-grep/ast-grep/pull/3034)\n- chore(deps): update dependency web-tree-sitter to ^0.26.0 || ^0.27.0 [`#3019`](https://github.com/ast-grep/ast-grep/pull/3019)\n- chore(deps): update dependency dprint to v0.64.3 [`#3029`](https://github.com/ast-grep/ast-grep/pull/3029)\n- chore(deps): update rust crate smallvec to v1.16.4 [`#3030`](https://github.com/ast-grep/ast-grep/pull/3030)\n- chore(deps): update rust crate similar to v3.2.1 [`#3031`](https://github.com/ast-grep/ast-grep/pull/3031)\n- chore(deps): update ru",
+    "assets": [
+      {
+        "name": "app-aarch64-apple-darwin.zip",
+        "digest": "sha256:a95772097b4d02bd9d45ed63b300c37041ae3c36632b3bf19250cc7c10187dc4"
+      },
+      {
+        "name": "app-aarch64-pc-windows-msvc.zip",
+        "digest": "sha256:8b3f8fed40e99e0fa4df050859d2897fce454cba262d903486dc12a464237126"
+      },
+      {
+        "name": "app-aarch64-unknown-linux-gnu.zip",
+        "digest": "sha256:db02fae2d8eace5fc40c55242068882452dd03eab38a1d950d5fd981cf112926"
+      },
+      {
+        "name": "app-i686-pc-windows-msvc.zip",
+        "digest": "sha256:24196842dc24d2f6cdfd93045e6f4de56053bf8134bc261d4cffa2a54c64140b"
+      },
+      {
+        "name": "app-x86_64-apple-darwin.zip",
+        "digest": "sha256:302b92868fa1b0439f0927b1f31668e03636b12a8e646fb1a3cd8de816c78242"
+      },
+      {
+        "name": "app-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:12a0cefb77498820ef6fb302ed8758cbda39be87d4c15120dc74c1dea968a50d"
+      },
+      {
+        "name": "app-x86_64-unknown-linux-gnu.zip",
+        "digest": "sha256:42514f77ae0c8a25d7d32154d31d3e7e16f3ab894f8ce76ce417de234ee49157"
+      }
+    ]
+  },
+  {
+    "tag_name": "0.51.0",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-15T15:10:15Z",
+    "html_url": "https://github.com/ast-grep/ast-grep/releases/tag/0.51.0",
+    "body": "- fix(cli): use `ast-grep` name in project setup hint [`#3001`](https://github.com/ast-grep/ast-grep/pull/3001)\n- fix: replace deprecated serde_yaml with serde-saphyr [`#2999`](https://github.com/ast-grep/ast-grep/pull/2999)\n- fix(deps): update rust crate tree-sitter-haskell to 0.24.0 [`#2988`](https://github.com/ast-grep/ast-grep/pull/2988)\n- fix(cli): preserve files when update-all writes fail [`#2995`](https://github.com/ast-grep/ast-grep/pull/2995)\n- Revise security policy for clarity and updates [`a7d3f69`](https://github.com/ast-grep/ast-grep/commit/a7d3f6935320f9859c3d522d133aabba21ccff4c)\n- fix: update wasm linting [`ea55463`](https://github.com/ast-grep/ast-grep/commit/ea5546303f4aebe86c16a3fada2dae0372bd95c4)",
+    "assets": [
+      {
+        "name": "app-aarch64-apple-darwin.zip",
+        "digest": "sha256:e18e13c27ed6c4b3ec4de00745b0755dee9dc26c035e226f4dd5d147dca99cc8"
+      },
+      {
+        "name": "app-aarch64-pc-windows-msvc.zip",
+        "digest": "sha256:fb6a4c3c6ed350d7e64eae81961bdf6b3f201c6e7c31ace8caccf8ceddff1cac"
+      },
+      {
+        "name": "app-aarch64-unknown-linux-gnu.zip",
+        "digest": "sha256:73af0ebe5958acee012754a5b2826a186580ef83333092408a7a01096fc30b8b"
+      },
+      {
+        "name": "app-i686-pc-windows-msvc.zip",
+        "digest": "sha256:20ee5bdbe55ec63180a808076a5095ee531f938d61c7b6466368605b61525e0e"
+      },
+      {
+        "name": "app-x86_64-apple-darwin.zip",
+        "digest": "sha256:8438fe549da59da28518c45bdaab5b851aabafe8fb4f8dc05c261a7649b4eca6"
+      },
+      {
+        "name": "app-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:1a5b7824c5925ac34257f806488e54860817cefd855fd308d13df7550d068908"
+      },
+      {
+        "name": "app-x86_64-unknown-linux-gnu.zip",
+        "digest": "sha256:a7eead5552d3a8daad70f5d50d935da44bd0c138e946b5b0a96b1d38169fa639"
+      }
+    ]
+  },
+  {
+    "tag_name": "0.50.0",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-09T14:19:44Z",
+    "html_url": "https://github.com/ast-grep/ast-grep/releases/tag/0.50.0",
+    "body": "- feat(outline): add Java annotation type and element rules [`#2955`](https://github.com/ast-grep/ast-grep/pull/2955)\n- fix(outline): report Java private/protected fields in the outline [`#2950`](https://github.com/ast-grep/ast-grep/pull/2950)\n- feat(outline): add Java enum member rule [`#2954`](https://github.com/ast-grep/ast-grep/pull/2954)\n- chore(deps): update dependency @types/node to v24.19.1 [`#2983`](https://github.com/ast-grep/ast-grep/pull/2983)\n- chore(deps): update dependency dprint to v0.60.1 [`#2984`](https://github.com/ast-grep/ast-grep/pull/2984)\n- feat(outline): add Java module declaration rule [`#2956`](https://github.com/ast-grep/ast-grep/pull/2956)\n- chore(deps): update rust crate termimad to v0.35.5 [`#2925`](https://github.com/ast-grep/ast-grep/pull/2925)\n- chore(deps): update rust crate napi-derive to v3.6.10 [`#2936`](https://github.com/ast-grep/ast-grep/pull/2936)\n- chore(deps): update dependency @napi-rs/cli to v3.10.6 [`#2922`](https://github.com/ast-grep/ast-grep/pull/2922)\n- chore(deps): update dependency chalk to v6.0.1 [`#2979`](https://github.com/ast-grep/ast-grep/pull/2979)\n- chore(deps): update rust crate tokio to v1.53.2 [`#2981`](https://github.com/ast-grep/ast-grep/pull/2981)\n- chore(deps): update rust crate thiserror to v2.0.21 [`#2966`](https://github.com/ast-grep/ast-grep/pull/2966)\n- chore(deps): update dependency oxlint to v1.86.0 [`#2967`](https://github.com/ast-grep/ast-grep/pull/2967)\n- chore(deps): update rust crate smallvec to v1.16.2 [`#2968`](https://github.com/ast-grep/ast-grep/pull/2968)\n- feat(outline): add Java wildcard-import outline rules [`#2948`](https://github.com/ast-grep/ast-grep/pull/2948)\n- fix(outline): capture C/C++ declarator identifier names [`#2946`](https://github.com/ast-grep/ast-grep/pull/2946)\n- feat(cli): add trust and revoke custom language policies [`#2972`](https://github.com/ast-grep/ast-grep/pull/2972)\n- refactor(cli): extract custom language policy [`#2977`](https://github.com/ast-grep/ast-grep/pull/2977)\n- feat(cli): add custom language loading policy [`#2971`](https://github.com/ast-grep/ast-grep/pull/2971)\n- fix(schema): reject null relation fields [`#2969`](https://github.com/ast-grep/ast-grep/pull/2969)\n- chore(deps): update rust crate clap_complete to v4.6.11 [`#2965`](https://github.com/ast-grep/ast-grep/pull/2965)\n- chore(deps): update rust crate clap to v4.6.7 [`#2964`](https://github.com/ast-grep/ast-grep/pull/2964)\n- chore(deps): update rust crate napi to v3.13.0 [`#29",
+    "assets": [
+      {
+        "name": "app-aarch64-apple-darwin.zip",
+        "digest": "sha256:b7de40f9c4a29b1c6e26619b776d02b432902550de9a79e4a71a416e86cc41f5"
+      },
+      {
+        "name": "app-aarch64-pc-windows-msvc.zip",
+        "digest": "sha256:eb6fcd175b83ccd0de42835262e9f03b84b71ced774d9e5846bfe02f191e6feb"
+      },
+      {
+        "name": "app-aarch64-unknown-linux-gnu.zip",
+        "digest": "sha256:3a4ad22dd1dca7a4900a173de65885578617af57fa13dd93b8d345d6b352770e"
+      },
+      {
+        "name": "app-i686-pc-windows-msvc.zip",
+        "digest": "sha256:854a37adafae83ea6404a7dd794c7a590e39e9331cc2680fdaebdf2c002a2a1b"
+      },
+      {
+        "name": "app-x86_64-apple-darwin.zip",
+        "digest": "sha256:b057d51bc3b0fa55c71c40774cdef687656e57b630a891c1a7d4e96e57b27d35"
+      },
+      {
+        "name": "app-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:e332ce9b10731c6d9bf142ed5ce2ab3795a8715e434dcca77de18e3e0f86e3f5"
+      },
+      {
+        "name": "app-x86_64-unknown-linux-gnu.zip",
+        "digest": "sha256:0fd3f489639abb8465a914b74b8779171577582318d8a940d00399f59dba81c5"
+      }
+    ]
+  },
+  {
+    "tag_name": "0.45.3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-31T01:42:23Z",
+    "html_url": "https://github.com/ast-grep/ast-grep/releases/tag/0.45.3",
+    "body": "- chore(deps): update dependency dprint to v0.57.0 [`#2916`](https://github.com/ast-grep/ast-grep/pull/2916)\n- feat: add min-severity cli [`#2917`](https://github.com/ast-grep/ast-grep/pull/2917)\n- fix(outline): anchor fallback signatures to names [`#2913`](https://github.com/ast-grep/ast-grep/pull/2913)\n- feat(outline): add Markdown heading support [`#2912`](https://github.com/ast-grep/ast-grep/pull/2912)\n- chore(deps): update dependency oxlint to v1.80.0 [`#2908`](https://github.com/ast-grep/ast-grep/pull/2908)\n- chore(deps): update dependency @ast-grep/napi to v0.45.2 [`#2906`](https://github.com/ast-grep/ast-grep/pull/2906)\n- feat: add min-severity cli (#2917) [`#2720`](https://github.com/ast-grep/ast-grep/issues/2720)\n- fix: ast-grep-ignore must be at first be the frist alphabet to take effect [`#2909`](https://github.com/ast-grep/ast-grep/issues/2909)\n- chore: update tree-sitter 0.27 [`bb74529`](https://github.com/ast-grep/ast-grep/commit/bb745292b5e683822c27612858b5b0edb54e273e)\n- fix: fix clippy [`c6b32d7`](https://github.com/ast-grep/ast-grep/commit/c6b32d74ad12cea690cb331c88f004764df6e985)",
+    "assets": [
+      {
+        "name": "app-aarch64-apple-darwin.zip",
+        "digest": "sha256:6d2279dea5bea2ad79c66ea93f5fe54ba926e398a8a26de76c56db68fe59eac6"
+      },
+      {
+        "name": "app-aarch64-pc-windows-msvc.zip",
+        "digest": "sha256:5da748848c4cad2a1e7f41e27b58871714dd2c0908632f9874cc2833b92a21ca"
+      },
+      {
+        "name": "app-aarch64-unknown-linux-gnu.zip",
+        "digest": "sha256:b39cfbc58da4b869a88b8a4bc57bd5deb0d24541e704cf7c257da7b53ec81c8f"
+      },
+      {
+        "name": "app-i686-pc-windows-msvc.zip",
+        "digest": "sha256:9c056ad0a95bad2834eeab4997c2583d1ba6b1b709cb85d3068ca4595a362147"
+      },
+      {
+        "name": "app-x86_64-apple-darwin.zip",
+        "digest": "sha256:b2ffd26f42810340326a9e8a084bdc3647a8795c1a3f21fc06bd7bef3c7c5b2c"
+      },
+      {
+        "name": "app-x86_64-pc-windows-msvc.zip",
+        "digest": "sha256:3751b7d6be7fd39a80df1180ffe7e053903dcf92d3190e5a8336ff1746af9059"
+      },
+      {
+        "name": "app-x86_64-unknown-linux-gnu.zip",
+        "digest": "sha256:f8ac830881339d1edee6b2652f54798c0f4da5a827f2db38a08ee31117783ce8"
+      }
+    ]
+  }
+]

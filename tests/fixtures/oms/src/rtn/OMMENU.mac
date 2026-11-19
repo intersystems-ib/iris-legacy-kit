@@ -1,0 +1,26 @@
+ROUTINE OMMENU
+OMMENU ;ACME/JRB - OMS MAIN MENU ;03/12/1998
+ ;;1.0;OMS;**3,9,22**;Mar 12, 1998
+ ;
+ ; Roll-and-scroll main menu.  D ^OMMENU
+ ;
+ N X,I,L,RTN
+ S U="^",$ZT="ERR^OMUTL"
+EN W !!,"ACME ORDER MANAGEMENT",?40,"[",$ZU(5),"]  ",$$FDT^OMUTL(+$H)
+ F I=1:1 S L=$T(OPTS+I) Q:$P(L,";",3)=""  W !,$J(I,3),". ",$P(L,";",4)
+ R !!,"Option (^ to exit): ",X:300 E  Q
+ Q:X="^"!(X="")
+ I X'?1.2N!(X<1) W "  ??" G EN
+ S L=$T(OPTS+X) I $P(L,";",3)="" W "  ??" G EN
+ S RTN=$P(L,";",3) D @RTN
+ G EN
+ ;
+OPTS ;; menu: entry point;text
+ ;;EN^OMCUST;Add a customer
+ ;;LKUP^OMCUSTL;Find a customer
+ ;;ENTRY^OMORD;Enter an order
+ ;;LIST^OMORDL;Orders by date
+ ;;DAILY^OMRPT;Daily sales report
+ ;;AGED^OMRPT;Aged debtors
+ ;;LOW^OMPROD;Low stock
+ ;;

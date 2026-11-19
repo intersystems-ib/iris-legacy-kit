@@ -1,0 +1,82 @@
+ROUTINE OMCUST
+OMCUST ;ACME/JRB - CUSTOMER MAINTENANCE ;03/12/1998
+ ;;1.0;OMS;**4,11,19,24**;Mar 12, 1998
+ ;
+ ; Customer record: see the OMS design binder, section 2.
+ ;
+ ; 1998-03-12 JRB  original
+ ; 2002-02-14 MK   address lines kept under the customer node
+ ; 2006-08-30 PdV  DEL entry point for the customer clean-up project
+ ; 2013-03-01 PdV  UPD keeps the previous record for the audit trail
+ Q
+ ;
+EN ; interactive: add a customer
+ N CNAME,CCTRY,CLIM,CPHONE,CADDR,CID,ERR,I,X
+ S U="^"
+ R !,"Customer name: ",CNAME:300 Q:CNAME=""!(CNAME="^")
+ S CNAME=$$UP^OMUTL(CNAME)
+ R !,"Country code: ",CCTRY:300 Q:CCTRY="^"
+ S CCTRY=$$UP^OMUTL(CCTRY)
+ R !,"Credit limit: ",CLIM:300 Q:CLIM="^"
+ R !,"Phone: ",CPHONE:300 Q:CPHONE="^"
+ F I=1:1:3 W !,"Address line ",I,": " R X:300 Q:X=""!(X="^")  S CADDR(I)=X
+ D ADD I $D(ERR) W !,"*** ",ERR Q
+ W !,"Customer ",CID," created."
+ Q
+ ;
+ADD ; add a customer
+ ; in:  CNAME, CCTRY, CLIM, CPHONE (optional), CADDR(n) (optional)
+ ; out: CID, or ERR
+ N I
+ K ERR S U="^"
+ I $G(CNAME)="" S ERR="NAME REQUIRED" Q
+ I $$CTRY^OMUTL($G(CCTRY))="" S ERR="UNKNOWN COUNTRY" Q
+ I $G(CLIM)'?1.7N S ERR="CREDIT LIMIT MUST BE A WHOLE NUMBER" Q
+ S CID=$$NXT^OMUTL("CUST")
+ S ^CUST(CID)=CNAME_U_CCTRY_U_(+$H)_U_"A"_U_CLIM_U_$G(CPHONE)
+ S I="" F  S I=$O(CADDR(I)) Q:I=""  S ^CUST(CID,"A",I)=CADDR(I)
+ D IDX(CID)
+ D AUD^OMUTL("CUST-ADD",CID)
+ Q
+ ;
+IDX(CID) ; set the index entries of customer CID
+ N X S X=^CUST(CID)
+ S ^CUSTX("N",$E($$UP^OMUTL($P(X,U)),1,30),CID)=""
+ S ^CUSTX("C",$P(X,U,2),CID)=""
+ Q
+ ;
+UNIDX(CID) ; remove the index entries of customer CID
+ N X S X=$G(^CUST(CID)) Q:X=""
+ K ^CUSTX("N",$E($$UP^OMUTL($P(X,U)),1,30),CID)
+ K ^CUSTX("C",$P(X,U,2),CID)
+ Q
+ ;
+UPD ; update a customer
+ ; in:  CID, and any of CNAME, CCTRY, CLIM, CPHONE
+ ; out: ERR if it failed
+ K ERR S U="^"
+ I '$G(CID)!'$D(^CUST(+$G(CID))) S ERR="NO SUCH CUSTOMER" Q
+ I $D(CCTRY),$$CTRY^OMUTL(CCTRY)="" S ERR="UNKNOWN COUNTRY" Q
+ L +^CUST(CID):5 E  S ERR="CUSTOMER IS LOCKED BY ANOTHER USER" Q
+ K ^TMP($J,"OLD") M ^TMP($J,"OLD")=^CUST(CID)
+ D UNIDX(CID)
+ I $D(CNAME) S $P(^CUST(CID),U,1)=CNAME
+ I $D(CCTRY) S $P(^CUST(CID),U,2)=CCTRY
+ I $D(CLIM) S $P(^CUST(CID),U,5)=CLIM
+ I $D(CPHONE) S $P(^CUST(CID),U,6)=CPHONE
+ D IDX(CID)
+ L -^CUST(CID)
+ D AUD^OMUTL("CUST-UPD",CID_" WAS "_$G(^TMP($J,"OLD")))
+ K ^TMP($J,"OLD")
+ Q
+ ;
+DEL ; delete a customer (customer clean-up project, 2006)
+ ; in:  CID
+ ; out: ERR if it failed
+ K ERR S U="^"
+ I '$G(CID)!'$D(^CUST(+$G(CID))) S ERR="NO SUCH CUSTOMER" Q
+ I $D(^SORDX("C",CID)) S ERR="CUSTOMER HAS ORDERS" Q
+ K ^CUSTX("C",$P(^CUST(CID),U,2),CID)
+ K ^CUST(CID)
+ D AUD^OMUTL("CUST-DEL",CID)
+ Q

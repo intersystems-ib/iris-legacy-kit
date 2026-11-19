@@ -1,0 +1,10 @@
+id: goto-label-offset
+language: cosroutine
+severity: warning
+message: "Jump to LABEL+offset: the target is a line count, so adding, removing or splitting a line between the label and the target silently changes where control goes."
+note: "Give the target line its own label and jump to that. $TEXT(LABEL+n) text tables are not reported."
+rule:
+  kind: line_ref
+  has: { kind: label_offset }
+  not:
+    inside: { kind: system_defined_function, stopBy: end }

@@ -1,0 +1,8 @@
+id: naked-global-reference
+language: cosroutine
+severity: warning
+message: "Naked global reference: it resolves against the last global reference executed, so a call, loop or line added before it can silently change which node it reads or writes."
+note: "Write the full reference (^NAME(subscripts)). The global map (iris-legacy:map-globals skill) shows what each naked reference resolves to."
+rule:
+  kind: gvn
+  regex: '^\^\('

@@ -1,0 +1,6 @@
+[Actions]
+ModifyService:Name=%Service_CallIn,Enabled=1,AutheEnabled=48
+
+[config]
+; 256 MB shared heap: line coverage (%Monitor.System.LineByLine, iris_coverage) needs it.
+gmheap=262144

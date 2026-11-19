@@ -1,0 +1,8 @@
+id: lock-without-timeout
+valid:
+  - " L +^ACCT(ID):5 E  Q\n"
+  - " L -^ACCT(ID)\n"
+  - "    lock +^ACCT(id):10\n"
+invalid:
+  - " L +^ACCT(ID)\n"
+  - " L ^ACCT(ID)\n"

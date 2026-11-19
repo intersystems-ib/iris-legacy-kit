@@ -1,0 +1,74 @@
+ROUTINE OMORD
+OMORD ;ACME/JRB - ORDER ENTRY ;06/01/1998
+ ;;1.0;OMS;**8,13,21,26**;Mar 12, 1998
+ ;
+ ; 1998-06-01 JRB  original
+ ; 2003-04-07 MK   prices come from OMPRICE (volume discounts)
+ ; 2009-05-02 MK   stock reserved through OMSTOCK
+ ; 2011-01-18 PdV  CANCEL gives the stock back
+ Q
+ ;
+ENTRY ; interactive order entry
+ N CID,ORD,SKU,QTY,ERR
+ S U="^"
+ R !,"Customer number: ",CID:300 Q:CID=""!(CID="^")
+ D NEW I $D(ERR) W !,"*** ",ERR Q
+ W !,"Order ",ORD," for ",$P(^CUST(CID),U)
+EN1 R !,"Product (SKU): ",SKU:300 G:SKU=""!(SKU="^") EN2
+ R "  Quantity: ",QTY:300 G:QTY="" EN1
+ D ADDL I $D(ERR) W !,"*** ",ERR K ERR
+ G EN1
+EN2 W !,"Order total: ",$J($P(^SORD(ORD),U,4),0,2)
+ Q
+ ;
+NEW ; open a new order
+ ; in:  CID
+ ; out: ORD, or ERR
+ K ERR S U="^"
+ I '$$VALID^OMCUSTL($G(CID)) S ERR="UNKNOWN OR INACTIVE CUSTOMER" Q
+ S ORD=$$NXT^OMUTL("SORD")
+ S ^SORD(ORD)=CID_U_(+$H)_U_"N"_U_0_U_""_U_0
+ S ^SORDX("C",CID,ORD)="",^SORDX("D",+$H,ORD)="",^SORDX("S","N",ORD)=""
+ D AUD^OMUTL("ORD-NEW",ORD)
+ Q
+ ;
+ADDL ; add a line to an open order
+ ; in:  ORD, SKU, QTY
+ ; out: ERR if it failed
+ N PR,LN,LT,X
+ K ERR S U="^"
+ I $P($G(^SORD(+$G(ORD))),U,3)'="N" S ERR="ORDER IS NOT OPEN" Q
+ I $G(SKU)="" S ERR="UNKNOWN PRODUCT" Q
+ I '$D(^PROD(SKU)) S ERR="UNKNOWN PRODUCT" Q
+ I $G(QTY)'?1.5N S ERR="QUANTITY MUST BE A WHOLE NUMBER" Q
+ I QTY<1 S ERR="QUANTITY MUST BE AT LEAST 1" Q
+ S PR=$$PRICE^OMPRICE(SKU,QTY,$P(^SORD(ORD),U))
+ I '$$RESERVE^OMSTOCK(SKU,QTY) S ERR="NOT ENOUGH STOCK" Q
+ S LT=QTY*PR,LN=$P(^SORD(ORD),U,6)+1
+ S ^SORD(ORD,"L",LN)=SKU_U_QTY_U_PR_U_LT
+ S X=^SORD(ORD),$P(X,U,4)=$P(X,U,4)+LT,$P(X,U,6)=LN,^SORD(ORD)=X
+ D AUD^OMUTL("ORD-LINE",ORD_"/"_LN)
+ Q
+ ;
+SHIP ; ship an open order
+ ; in:  ORD
+ ; out: ERR if it failed
+ K ERR S U="^"
+ I $P($G(^SORD(+$G(ORD))),U,3)'="N" S ERR="ORDER IS NOT OPEN" Q
+ S $P(^SORD(ORD),U,3)="S"
+ K ^SORDX("S","N",ORD) S ^SORDX("S","S",ORD)=""
+ D AUD^OMUTL("ORD-SHIP",ORD)
+ Q
+ ;
+CANCEL ; cancel an open order and give the stock back
+ ; in:  ORD
+ ; out: ERR if it failed
+ N X,LN,L
+ K ERR S U="^"
+ S X=$G(^SORD(+$G(ORD))) I X="" S ERR="NO SUCH ORDER" Q
+ I $P(X,U,3)'="N" S ERR="ONLY OPEN ORDERS CAN BE CANCELLED" Q
+ S LN=0 F  S LN=$O(^SORD(ORD,"L",LN)) Q:'LN  S L=^(LN) D RELEASE^OMSTOCK($P(L,U),$P(L,U,2))
+ S $P(^(ORD),U,3)="X"
+ K ^SORDX("S","N",ORD) S ^SORDX("S","X",ORD)=""
+ D AUD^OMUTL("ORD-CANCEL",ORD)
+ Q

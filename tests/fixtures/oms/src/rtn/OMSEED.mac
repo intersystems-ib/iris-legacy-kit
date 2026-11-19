@@ -1,0 +1,147 @@
+ROUTINE OMSEED
+OMSEED ; OMS demo data: deterministic, so every reset gives the same data
+ ; do EN^OMSEED               300 customers, 50 products, 2000 orders
+ ; write $$CHECKSUM^OMSEED()  fingerprint of the application globals (^OMAUD excluded)
+ quit
+
+EN() public {
+    do RUN(300, 50, 2000)
+}
+
+RUN(ncust, nprod, nord) public {
+    kill ^CUST, ^CUSTX, ^PROD, ^SORD, ^SORDX, ^INVC, ^INVCX, ^OMCTL, ^OMAUD, ^TMP
+    set seed = 20261022
+    set ^OMCTL("PARM", "TERMS") = 30
+    set ^OMCTL("PARM", "CURR") = "EUR"
+    set ^OMCTL("PARM", "MONEY") = "S Y=$J(V,10,2)"
+    set first = $zdateh("2026-09-01", 3), last = $zdateh("2026-10-15", 3)
+
+    // customers; ids 1-5 have the awkward names real data always has
+    set special = "SMITH, JONES & CO|O'BRIEN, MURPHY LTD|MARTIN, GARCIA Y ASOCIADOS|ACME, INC.|DUPONT & FILS, S.A."
+    set pre = "ACME,NORTHWIND,BLUE RIVER,SILVERLINE,ORION,ATLAS,PIONEER,SUMMIT,HARBOUR,REDWOOD,GRANITE,MERIDIAN,EVEREST,NOVA,KESTREL,CASCADE,MAPLE,ZENITH,FALCON,LIBERTY"
+    set suf = "TRADING,TOOLS,FOODS,LOGISTICS,SUPPLIES,MOTORS,TEXTILES,ELECTRIC,PHARMA,BUILDERS,AND SONS,HOLDINGS"
+    set ctry = "GB,GB,GB,FR,FR,ES,ES,DE,DE,NL,IT,US"
+    set street = "HIGH STREET,MARKET SQUARE,RUE DE LA PAIX,CALLE MAYOR,HAUPTSTRASSE,KEIZERSGRACHT,VIA ROMA,MAIN STREET"
+    set city = "LONDON,LEEDS,PARIS,LYON,MADRID,SEVILLA,BERLIN,MUNICH,AMSTERDAM,MILANO,BOSTON,BRISTOL"
+    for id = 1:1:ncust {
+        if id <= 5 {
+            set name = $piece(special, "|", id)
+        } else {
+            set name = $piece(pre, ",", $$RND(.seed, 20)) _ " " _ $piece(suf, ",", $$RND(.seed, 12))
+        }
+        set c = $piece(ctry, ",", $$RND(.seed, 12))
+        set r = $$RND(.seed, 100), status = $select(r <= 94: "A", r <= 97: "H", 1: "I")
+        set limit = $piece("5000,10000,25000,50000,100000", ",", $$RND(.seed, 5))
+        set phone = "+" _ $case(c, "GB": "44", "FR": "33", "ES": "34", "DE": "49", "NL": "31", "IT": "39", : "1") _ " " _ (100000000 + $$RND(.seed, 899999999))
+        set ^CUST(id) = name _ "^" _ c _ "^" _ (first - $$RND(.seed, 6000)) _ "^" _ status _ "^" _ limit _ "^" _ phone
+        if $$RND(.seed, 100) <= 40 {
+            set ^CUST(id, "A", 1) = $$RND(.seed, 200) _ " " _ $piece(street, ",", $$RND(.seed, 8))
+            set ^CUST(id, "A", 2) = $piece(city, ",", $$RND(.seed, 12))
+        }
+        set ^CUSTX("N", $extract(name, 1, 30), id) = ""
+        set ^CUSTX("C", c, id) = ""
+    }
+    set ^OMCTL("SEQ", "CUST") = ncust
+
+    // products
+    set adj = "STEEL,COPPER,NYLON,OAK,CERAMIC,ALUMINIUM,RUBBER,GLASS,CARBON,BRASS"
+    set noun = "BRACKET,VALVE,HINGE,GASKET,PANEL,FITTING,HOSE,BEARING,CLAMP,FILTER"
+    for i = 1:1:nprod {
+        set sku = "P" _ $translate($justify(i, 4), " ", "0")
+        set desc = $piece(adj, ",", $$RND(.seed, 10)) _ " " _ $piece(noun, ",", $$RND(.seed, 10)) _ " " _ ($$RND(.seed, 90) + 9) _ "MM"
+        set price = $$RND(.seed, 400) + 4 + (($$RND(.seed, 100) - 1) / 100)
+        set qoh = $$RND(.seed, 500) - 1, reord = 10 + $$RND(.seed, 60)
+        set status = $select($$RND(.seed, 100) <= 96: "A", 1: "D")
+        set ^PROD(sku) = desc _ "^" _ $fnumber(price, "", 2) _ "^" _ qoh _ "^" _ reord _ "^" _ status
+        set ^PROD(sku, "M", 1) = (first - 30) _ "^" _ qoh _ "^OPENING BALANCE"
+    }
+
+    // orders: numbers rise with the date and every day of the period has orders
+    set days = last - first + 1
+    for ord = 1:1:nord {
+        set date = first + ((ord - 1) * days \ nord)
+        set cid = $$RND(.seed, ncust)
+        set ^SORD(ord) = cid _ "^" _ date _ "^N^0^^0"
+        set nl = $$RND(.seed, 4), total = 0
+        for ln = 1:1:nl {
+            set sku = "P" _ $translate($justify($$RND(.seed, nprod), 4), " ", "0")
+            set qty = $select($$RND(.seed, 100) <= 70: $$RND(.seed, 9), 1: $$RND(.seed, 120))
+            set price = $$PRICE^OMPRICE(sku, qty, cid)
+            set ^SORD(ord, "L", ln) = sku _ "^" _ qty _ "^" _ price _ "^" _ (qty * price)
+            set total = total + (qty * price)
+        }
+        set age = last - date, r = $$RND(.seed, 100)
+        if age < 7 {
+            set status = $select(r <= 50: "N", r <= 90: "S", 1: "X")
+        } else {
+            set status = $select(r <= 85: "I", r <= 95: "S", 1: "X")
+        }
+        set $piece(^SORD(ord), "^", 3) = status, $piece(^SORD(ord), "^", 4) = total, $piece(^SORD(ord), "^", 6) = nl
+        set ^SORDX("C", cid, ord) = "", ^SORDX("D", date, ord) = "", ^SORDX("S", status, ord) = ""
+        if status = "I" {
+            do INVOICE(ord, last, .seed)
+        }
+    }
+    set ^OMCTL("SEQ", "SORD") = nord
+
+    // credit review: each limit goes up to the first tier that covers three quarters of the
+    // customer's order volume in the period; the review has not reached every tenth account yet.
+    // Draws no random numbers, so everything else stays as it was.
+    set tiers = "5000,10000,25000,50000,100000,150000,250000,500000"
+    for id = 1:1:ncust {
+        continue:id#10=3
+        set volume = 0, ord = ""
+        for {
+            set ord = $order(^SORDX("C", id, ord))
+            quit:ord=""
+            set:$piece(^SORD(ord), "^", 3)'="X" volume = volume + $piece(^SORD(ord), "^", 4)
+        }
+        for i = 1:1:$length(tiers, ",") {
+            set tier = $piece(tiers, ",", i)
+            quit:tier'<(volume * 0.75)
+        }
+        set:tier>$piece(^CUST(id), "^", 5) $piece(^CUST(id), "^", 5) = tier
+    }
+}
+
+INVOICE(ord, last, seed) public {
+    // invoice an order of the seed; most are paid, some partly, some not at all
+    set x = ^SORD(ord), cid = $piece(x, "^", 1), date = $piece(x, "^", 2), amount = $piece(x, "^", 4)
+    set inv = $increment(^OMCTL("SEQ", "INVC"))
+    set idate = date + $$RND(.seed, 4) - 1
+    set r = $$RND(.seed, 100)
+    set paid = $select(r <= 65: amount, r <= 80: $fnumber(amount * $$RND(.seed, 9) / 10, "", 2), 1: 0)
+    set ^INVC(inv) = ord _ "^" _ cid _ "^" _ idate _ "^" _ amount _ "^" _ (idate + 30) _ "^" _ paid _ "^" _ $select(paid >= amount: "P", 1: "O")
+    if paid > 0 {
+        set pdate = idate + $$RND(.seed, 20)
+        if pdate > last {
+            set pdate = last
+        }
+        set ^INVC(inv, "P", 1) = pdate _ "^" _ paid _ "^" _ $piece("TRANSFER,CARD,CHEQUE", ",", $$RND(.seed, 3))
+    }
+    set ^INVCX("C", cid, inv) = ""
+    if paid < amount {
+        set ^INVCX("O", inv) = ""
+    }
+    set $piece(^SORD(ord), "^", 5) = inv
+}
+
+RND(seed, n) public {
+    // Park-Miller minimal standard generator: next value in 1..n
+    set seed = seed * 16807 # 2147483647
+    quit seed # n + 1
+}
+
+CHECKSUM() public {
+    // CRC-32 over every node of the application globals; ^OMAUD holds timestamps, so it is left out
+    set crc = 0
+    for g = "^CUST", "^CUSTX", "^PROD", "^SORD", "^SORDX", "^INVC", "^INVCX", "^OMCTL" {
+        set q = g
+        for {
+            set q = $query(@q)
+            quit:q=""
+            set crc = $zcrc(crc _ q _ "=" _ @q, 7)
+        }
+    }
+    quit crc
+}

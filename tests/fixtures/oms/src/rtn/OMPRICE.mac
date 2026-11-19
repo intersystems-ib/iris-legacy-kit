@@ -1,0 +1,21 @@
+ROUTINE OMPRICE
+OMPRICE ; OMS pricing
+ ; 2003-04-07 MK  new pricing module, replaces the price lookups in OMORD
+ ; 2008-10-02 MK  customers on hold pay list price
+ quit
+
+PRICE(sku, qty, cid) public {
+    // unit price of sku for qty units ordered by customer cid; "" for an unknown product
+    set list = $piece($get(^PROD(sku)), "^", 2)
+    quit:list="" ""
+    set disc = $$DISC(qty)
+    if $piece($get(^CUST(+cid)), "^", 4) = "H" {
+        set disc = 0
+    }
+    quit $fnumber(list * (100 - disc) / 100, "", 2)
+}
+
+DISC(qty) public {
+    // volume discount in percent
+    quit $select(qty >= 100: 15, qty >= 50: 10, qty >= 10: 5, 1: 0)
+}

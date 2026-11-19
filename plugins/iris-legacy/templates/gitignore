@@ -1,0 +1,5 @@
+# Each developer's IRIS credentials (env) and local overrides
+.claude/settings.local.json
+# Tool defects noted by the kit, and their repro files, before they are reported
+.claude/kit-findings.jsonl
+.claude/kit-findings/

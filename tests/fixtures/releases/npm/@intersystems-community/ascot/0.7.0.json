@@ -1,0 +1,8 @@
+{
+  "name": "@intersystems-community/ascot",
+  "version": "0.7.0",
+  "dist": {
+    "integrity": "sha512-PNNdOzOoEh3ofRbVg+xD0gAZfco81nRmmzSlVifpByZWHhBpxsqJmuYHoZMiT4LvP68pxjAw/KtNt3PJePhQWg==",
+    "tarball": "https://registry.npmjs.org/@intersystems-community/ascot/-/ascot-0.7.0.tgz"
+  }
+}

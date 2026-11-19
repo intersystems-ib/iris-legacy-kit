@@ -1,0 +1,51 @@
+ROUTINE OMRPT
+OMRPT ;ACME/JRB - REPORTS ;09/03/1998
+ ;;1.0;OMS;**11,20,27**;Mar 12, 1998
+ ;
+ ; 1998-09-03 JRB  original
+ ; 2007-05-14 PdV  aged debtors
+ ; 2015-11-30 PdV  top customers
+ Q
+ ;
+DAILY ; interactive: daily sales report
+ N X,FROM,R
+ S U="^"
+ R !,"Date (DD/MM/YYYY, blank=today): ",X:300 Q:X="^"
+ S FROM=$S(X="":+$H,1:$$IDT^OMUTL(X)) I FROM="" W "  ??" G DAILY
+ S R=$$DAYTOT(FROM)
+ W !,"Orders: ",+R,"   Sales: ",$$FMT^OMUTL($P(R,U,2))
+ Q
+ ;
+DAYTOT(DAY) ; number and value of the orders (not cancelled) of DAY: count ^ total
+ N FROM,TO,I,O,X,C,T
+ S FROM=DAY,TO=DAY D BYDATE^OMORDL
+ S (C,T)=0,I=0 F  S I=$O(^TMP($J,"OL",I)) Q:'I  S O=^(I),X=^SORD(O) I $P(X,"^",3)'="X" S C=C+1,T=T+$P(X,"^",4)
+ K ^TMP($J,"OL")
+ Q C_"^"_T
+ ;
+AGED ; interactive: aged debtors (open invoices by days past due)
+ N TOT,BK
+ S U="^"
+ D AGEDTOT(.TOT)
+ W !,"NOT DUE",?12,"1-30",?24,"31-60",?36,"61-90",?48,"OVER 90"
+ W ! F BK=1:1:5 W ?(BK-1*12),$$FMT^OMUTL($G(TOT(BK)))
+ Q
+ ;
+AGEDTOT(TOT) ; open balances by age: TOT(1) not due, TOT(2) 1-30 ... TOT(5) over 90 days past due
+ N INV,X,OUT,AGE,BK
+ K TOT
+ S INV="" F  S INV=$O(^INVCX("O",INV)) Q:INV=""  S X=^INVC(INV) D
+ . S OUT=$P(X,"^",4)-$P(X,"^",5) ; amount - paid
+ . S AGE=+$H-$P(X,"^",5)
+ . S BK=$S(AGE<1:1,AGE<31:2,AGE<61:3,AGE<91:4,1:5),TOT(BK)=$G(TOT(BK))+OUT
+ Q
+ ;
+TOP ; top N customers by value of order lines, all time
+ ; in:  N
+ ; out: ^TMP($J,"TOP",rank) = customer ^ value
+ N Q,C,V,R,I
+ K ^TMP($J,"TOP")
+ S Q="^SORD" F  S Q=$Q(@Q) Q:Q=""  I $QS(Q,2)="L" S C=+^SORD($QS(Q,1)),V(C)=$G(V(C))+$P(@Q,"^",4)
+ S C="" F  S C=$O(V(C)) Q:C=""  S R(-V(C),C)=""
+ S I=0,V="" F  S V=$O(R(V)) Q:V=""  Q:I'<N  S C="" F  S C=$O(R(V,C)) Q:C=""  Q:I'<N  S I=I+1,^TMP($J,"TOP",I)=C_"^"_(-V)
+ Q

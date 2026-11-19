@@ -1,0 +1,22 @@
+; Build-time setup of the development image, run once inside `docker build`.
+; Fed to `iris session` line by line, not compiled: no $$$ macros, and no multi-line
+; if { } else { } (use postconditionals).
+
+; --- Dev only: never expire the accounts the Web Gateway, VS Code and the MCP server use.
+zn "%SYS"
+set sc = ##class(Security.Users).Get("_SYSTEM",.p)
+set p("ChangePassword")=0,p("PasswordNeverExpires")=1
+do ##class(Security.Users).Modify("_SYSTEM",.p)
+
+; --- Namespace __NS__: routines and classes in __NS__-CODE, globals in __NS__-DATA.
+do $SYSTEM.OBJ.Load("/opt/irisbuild/Installer.cls", "ck")
+set vars("Namespace")="__NS__"
+set vars("DataDBPath")="/opt/irisapp/db/__NS__-DATA"
+set vars("CodeDBPath")="/opt/irisapp/db/__NS__-CODE"
+set exists = ##class(%SYS.Namespace).Exists("__NS__")
+set:'exists sc = ##class(App.Installer).CreateNamespace(.vars)
+do:('exists)&&($system.Status.IsError(sc)) $SYSTEM.Status.DisplayError(sc)
+
+write !,"__NS__ namespace exists: ",##class(%SYS.Namespace).Exists("__NS__"),!
+do:'##class(%SYS.Namespace).Exists("__NS__") $SYSTEM.Process.Terminate(,1)
+halt

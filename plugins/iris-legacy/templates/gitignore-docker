@@ -1,0 +1,5 @@
+# Docker stack: local settings, license key, gateway runtime state
+.env
+iris.key
+*.ISCkey
+docker/webgateway/durable/

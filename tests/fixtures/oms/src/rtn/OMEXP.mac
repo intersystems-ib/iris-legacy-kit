@@ -1,0 +1,31 @@
+ROUTINE OMEXP
+OMEXP ; OMS exports
+ ; 2010-06-21 PdV  customer list for the CRM pilot
+ quit
+
+CSV(file) public {
+    // customer list as semicolon-separated values; returns the number of customers written, -1 on error
+    set $ztrap = "ERR"
+    set n = 0
+    open file:("WNS"):5
+    if '$test {
+        quit -1
+    }
+    use file
+    write "ID;NAME;COUNTRY;SINCE;STATUS;CREDIT LIMIT", !
+    set id = ""
+    for {
+        set id = $order(^CUST(id))
+        quit:id=""
+        set x = ^CUST(id)
+        write id, ";", $piece(x, "^", 1), ";", $piece(x, "^", 2), ";", $zdate($piece(x, "^", 3), 3), ";", $piece(x, "^", 4), ";", $piece(x, "^", 5), !
+        set n = n + 1
+    }
+    close file
+    quit n
+ERR
+    set $ztrap = ""
+    close:$get(file)'="" file
+    do BACK^%ETN
+    quit -1
+}

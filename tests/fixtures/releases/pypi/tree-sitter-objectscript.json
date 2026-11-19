@@ -1,0 +1,1999 @@
+{
+  "info": {
+    "name": "tree-sitter-objectscript",
+    "version": "1.11.0",
+    "project_urls": {
+      "Homepage": "https://github.com/intersystems/tree-sitter-objectscript"
+    }
+  },
+  "releases": {
+    "1.10.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.10.1": [
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.1.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.10.2": [
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.10.2.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.11.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.11.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.5.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.5.1": [
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.5.1.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.6.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.6.1": [
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.1.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.6.3": [
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.6.3.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.1": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.1.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.10": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.10.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.11": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.11.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.12": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.12.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.13": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.13.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.2": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.2.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.3": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.3.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.4": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.4.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.5": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.5.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.6": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.6.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.7": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.7.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.8": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.8.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.7.9": [
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.7.9.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.1": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-musllinux_1_2_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.1.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.2": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.2.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.3": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.3.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.4": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.4.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.5": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.5.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.6": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.6.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.7": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.7.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.8": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.8.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.8.9": [
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.8.9.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.0": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.0.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.1": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.1.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.10": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.10.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.11": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.11.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.12": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.12.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.13": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.13.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.14": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.14.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.15": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.15.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.16": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.16.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.17": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.17.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.18": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.18.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.19": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.19.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.2": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.2.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.20": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.20.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.21": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.21.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.22": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.22.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.3": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.3.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.4": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.4.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.5": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.5.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.6": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.6.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.7": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.7.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.8": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.8.tar.gz",
+        "yanked": false
+      }
+    ],
+    "1.9.9": [
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-macosx_10_9_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-macosx_11_0_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-musllinux_1_2_x86_64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-win_amd64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9-cp38-abi3-win_arm64.whl",
+        "yanked": false
+      },
+      {
+        "filename": "tree_sitter_objectscript-1.9.9.tar.gz",
+        "yanked": false
+      }
+    ]
+  }
+}

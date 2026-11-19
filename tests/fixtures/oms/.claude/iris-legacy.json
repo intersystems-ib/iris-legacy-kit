@@ -1,0 +1,4 @@
+{
+  "sourceDirs": ["src"],
+  "publish": [{ "dir": "ui", "command": "scripts/publish.sh" }]
+}

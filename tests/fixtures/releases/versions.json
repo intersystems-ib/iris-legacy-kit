@@ -1,0 +1,87 @@
+{
+  "iris-interop-dev": {
+    "version": "v0.26.0-interop",
+    "reports": "0.26.0",
+    "url": "https://github.com/intersystems-ib/iris-interop-dev/releases/download/{version}/{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "iris-interop-dev-macos-arm64",
+        "sha256": "44dd178935c7947d53d3a387c828c1f6dce7b60d8b3971fbd2b08c9a77d95743"
+      },
+      "darwin-x86_64": {
+        "name": "iris-interop-dev-macos-x64",
+        "sha256": "906a50b299a5e797c7d6087b7af8adf06f0853d12bdf2a872323fdd9d32917d9"
+      },
+      "linux-x86_64": {
+        "name": "iris-interop-dev-linux-x64-musl",
+        "sha256": "e7a9ac9620925e67fa25bd2797ce9472d45d45e20027b97cf9dbcae5046fae37"
+      }
+    }
+  },
+  "ascot": {
+    "version": "0.4.3",
+    "url": "https://github.com/intersystems-community/ascot/releases/download/v{version}/{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "sha256": "ef023746622bee6dcfdb8457a2a6cb89514fa0746399a3ab474e8de3d11956ac"
+      },
+      "darwin-x86_64": {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "sha256": "ef023746622bee6dcfdb8457a2a6cb89514fa0746399a3ab474e8de3d11956ac"
+      },
+      "linux-x86_64": {
+        "name": "ascot-cli-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "0eb09ac321d6cca4d58431ce7a2085a75f41fb9bc51651224306b7776938165d"
+      },
+      "linux-aarch64": {
+        "name": "ascot-cli-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "4f21a8698ac27802f1f160545121c5c35a26d9aa0e7fd0358098a98c2f19305a"
+      }
+    }
+  },
+  "ast-grep": {
+    "version": "0.51.0",
+    "url": "https://github.com/ast-grep/ast-grep/releases/download/{version}/{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "app-aarch64-apple-darwin.zip",
+        "sha256": "e18e13c27ed6c4b3ec4de00745b0755dee9dc26c035e226f4dd5d147dca99cc8"
+      },
+      "darwin-x86_64": {
+        "name": "app-x86_64-apple-darwin.zip",
+        "sha256": "8438fe549da59da28518c45bdaab5b851aabafe8fb4f8dc05c261a7649b4eca6"
+      },
+      "linux-x86_64": {
+        "name": "app-x86_64-unknown-linux-gnu.zip",
+        "sha256": "a7eead5552d3a8daad70f5d50d935da44bd0c138e946b5b0a96b1d38169fa639"
+      },
+      "linux-aarch64": {
+        "name": "app-aarch64-unknown-linux-gnu.zip",
+        "sha256": "73af0ebe5958acee012754a5b2826a186580ef83333092408a7a01096fc30b8b"
+      }
+    }
+  },
+  "tree-sitter-objectscript": {
+    "version": "1.10.2",
+    "url": "{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "https://files.pythonhosted.org/packages/22/b8/98e6c18e3685c39fd59789a13396648786f2588e4d3dd68e36b27b8ad9fc/tree_sitter_objectscript-1.10.2-cp38-abi3-macosx_11_0_arm64.whl",
+        "sha256": "ea36856add31e618e6b03264c4dbde231bcf63ae9d5e34e873dd5905db2da952"
+      },
+      "darwin-x86_64": {
+        "name": "https://files.pythonhosted.org/packages/5b/47/13725854ba500c5751f26dde9d157d7967570ce49ade4c1cbb4abf1c1b7d/tree_sitter_objectscript-1.10.2-cp38-abi3-macosx_10_9_x86_64.whl",
+        "sha256": "77721ade6790acb76648c832028e1757070d24dc91f98de7435d58ed0210994f"
+      },
+      "linux-x86_64": {
+        "name": "https://files.pythonhosted.org/packages/92/0a/de8125aea8776347a280a2e7db798d544e7b264ff646fbcfb4ffeab088cf/tree_sitter_objectscript-1.10.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "70bd876759abd221734642e8c3da8b3c164a23201bb54e24de5e199ea9396eef"
+      },
+      "linux-aarch64": {
+        "name": "https://files.pythonhosted.org/packages/5f/e0/ded6f9f8c079b7f7d3e1ce4c9ca979dba189df0c1068362a30fa49b9b9d3/tree_sitter_objectscript-1.10.2-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "206a78749f6cda7a7fea01b36fecae87a2c063bb2869a359513d64648236afd6"
+      }
+    }
+  }
+}

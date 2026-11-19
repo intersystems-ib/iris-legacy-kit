@@ -1,0 +1,39 @@
+ROUTINE OMCUSTL
+OMCUSTL ;ACME/JRB - CUSTOMER LOOKUP ;04/02/1998
+ ;;1.0;OMS;**4,12**;Mar 12, 1998
+ Q
+ ;
+LKUP ; interactive: find customers by name
+ N X,R,I
+ S U="^"
+ R !,"Name starts with: ",X:300 Q:X=""!(X="^")
+ D FIND
+ I '$D(^TMP($J,"CL")) W !,"No match." Q
+ S I=0 F  S I=$O(^TMP($J,"CL",I)) Q:'I  S R=^(I) W !,$J($P(R,U),6),"  ",$$PAD^OMUTL($P(R,U,2),36),$P(R,U,3)
+ K ^TMP($J,"CL")
+ Q
+ ;
+FIND ; customers whose name starts with X
+ ; in:  X
+ ; out: ^TMP($J,"CL",n) = id ^ name ^ country
+ N P,NM,ID,C
+ S U="^" K ^TMP($J,"CL")
+ S P=$$UP^OMUTL($G(X)),C=0 Q:P=""
+ S NM=P I $D(^CUSTX("N",NM)) G F2
+F1 S NM=$O(^CUSTX("N",NM)) Q:NM=""  Q:$E(NM,1,$L(P))'=P
+F2 S ID="" F  S ID=$O(^CUSTX("N",NM,ID)) Q:ID=""  D
+ . S C=C+1,^TMP($J,"CL",C)=ID_U_$P(^CUST(ID),U)_U_$P(^CUST(ID),U,2)
+ G F1
+ ;
+VALID(ID) ; 1 if ID is an existing, active customer
+ Q:$G(ID)="" 0
+ Q:$D(^CUST(ID))'=1 0
+ Q $P(^CUST(ID),"^",4)="A"
+ ;
+BYCTRY ; customers in country CCTRY
+ ; in:  CCTRY
+ ; out: ^TMP($J,"CL",n) = id ^ name ^ country
+ N ID,C
+ S U="^" K ^TMP($J,"CL")
+ S C=0,ID="" F  S ID=$O(^CUSTX("C",CCTRY,ID)) Q:ID=""  S C=C+1,^TMP($J,"CL",C)=ID_U_$P(^CUST(ID),U)_U_CCTRY
+ Q

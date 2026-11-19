@@ -1,0 +1,95 @@
+{
+  "iris-interop-dev": {
+    "version": "v0.27.0-interop",
+    "issues": "intersystems-ib/iris-interop-dev",
+    "reports": "0.27.0",
+    "url": "https://github.com/intersystems-ib/iris-interop-dev/releases/download/{version}/{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "iris-interop-dev-macos-arm64",
+        "sha256": "3ebf3043c32d67d7c2d42e907e5e2092f47d750e86e9c9c2df3391150625fcb6"
+      },
+      "darwin-x86_64": {
+        "name": "iris-interop-dev-macos-x64",
+        "sha256": "17b247aaf57cf0786f8ce9f228d65bf9777521856b29bc65e10df6037ac99e58"
+      },
+      "linux-x86_64": {
+        "name": "iris-interop-dev-linux-x64-musl",
+        "sha256": "48ed499a57c069cdf0152376d8418793256dc760a195d3aac10962e80aaa3295"
+      }
+    }
+  },
+  "ascot": {
+    "version": "0.7.0",
+    "issues": "intersystems-community/ascot",
+    "url": "https://github.com/intersystems-community/ascot/releases/download/v{version}/{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "sha256": "43f0cc92da3b9bb9065dd13eaa0375685d0dfa0750b45dab5ba9b49d71f98ccc"
+      },
+      "darwin-x86_64": {
+        "name": "ascot-cli-universal-apple-darwin.tar.gz",
+        "sha256": "43f0cc92da3b9bb9065dd13eaa0375685d0dfa0750b45dab5ba9b49d71f98ccc"
+      },
+      "linux-x86_64": {
+        "name": "ascot-cli-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "97f833bbc083c8f298ce1d5c0d71d6eb055f447713d2d0f4cdbc52d31ce49a87"
+      },
+      "linux-aarch64": {
+        "name": "ascot-cli-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "678aa82e5cd9d7c0740279e058283d7a0663fb3b06282423394b6c53cae15f8a"
+      }
+    },
+    "declarations": {
+      "url": "https://registry.npmjs.org/@intersystems-community/ascot/-/ascot-{version}.tgz",
+      "sha512": "3cd35d3b33a8121de87d16d583ec43d200197dca3cd674669b34a55627e90726561e1069c6ca899ae607a193224f82ef3faf29c63030fcab4db773c978f8505a"
+    }
+  },
+  "ast-grep": {
+    "version": "0.51.1",
+    "issues": "ast-grep/ast-grep",
+    "url": "https://github.com/ast-grep/ast-grep/releases/download/{version}/{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "app-aarch64-apple-darwin.zip",
+        "sha256": "a95772097b4d02bd9d45ed63b300c37041ae3c36632b3bf19250cc7c10187dc4"
+      },
+      "darwin-x86_64": {
+        "name": "app-x86_64-apple-darwin.zip",
+        "sha256": "302b92868fa1b0439f0927b1f31668e03636b12a8e646fb1a3cd8de816c78242"
+      },
+      "linux-x86_64": {
+        "name": "app-x86_64-unknown-linux-gnu.zip",
+        "sha256": "42514f77ae0c8a25d7d32154d31d3e7e16f3ab894f8ce76ce417de234ee49157"
+      },
+      "linux-aarch64": {
+        "name": "app-aarch64-unknown-linux-gnu.zip",
+        "sha256": "db02fae2d8eace5fc40c55242068882452dd03eab38a1d950d5fd981cf112926"
+      }
+    }
+  },
+  "tree-sitter-objectscript": {
+    "version": "1.11.0",
+    "issues": "intersystems/tree-sitter-objectscript",
+    "url": "{asset}",
+    "assets": {
+      "darwin-arm64": {
+        "name": "https://files.pythonhosted.org/packages/22/cc/3fd569baecab16246bde771eefe932288839434f0678d2c0d77e6dae2b17/tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_11_0_arm64.whl",
+        "sha256": "f44f6916b438490564f8fcac88a85453fd097974c2ba86632a55176f73672112"
+      },
+      "darwin-x86_64": {
+        "name": "https://files.pythonhosted.org/packages/af/0d/a7012f2267de205cd27c87b43e8124265df7b31d1b5e6f7f4e8b635a0653/tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_10_9_x86_64.whl",
+        "sha256": "d1fc6f2b99d98050f32b90d5dca496fbb385182638ecb9ddc927a9b049886a1d"
+      },
+      "linux-x86_64": {
+        "name": "https://files.pythonhosted.org/packages/98/0d/50d7c194024fe87d4c21e5ed0a2e4969ae881b8dd514a8d13964a1c4b193/tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "c4501ae3ce752b7cca176ce3bb65b64820b6a10a57282a8def8f28763096dbc4"
+      },
+      "linux-aarch64": {
+        "name": "https://files.pythonhosted.org/packages/aa/85/2343e48d8cbfaac781660e6e0343bd8bcd6649bdb14d6f2ece30992e2d49/tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "25c9518dbd3ecc6fd0112e3d88023197add42344e36ca6452c6918f4597bc12d"
+      }
+    }
+  }
+}

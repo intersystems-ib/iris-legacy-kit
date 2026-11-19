@@ -1,0 +1,7 @@
+id: zutil-call
+valid:
+  - " W $NAMESPACE\n"
+  - " W $ZDATE(+$H,3)\n"
+invalid:
+  - " S X=$ZU(68,40,1)\n"
+  - " S X=$zutil(67,10,$J)\n"

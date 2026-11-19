@@ -1,0 +1,75 @@
+{
+  "info": {
+    "name": "tree-sitter-objectscript",
+    "version": "1.11.0",
+    "project_urls": {
+      "Homepage": "https://github.com/intersystems/tree-sitter-objectscript"
+    }
+  },
+  "urls": [
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_10_9_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/af/0d/a7012f2267de205cd27c87b43e8124265df7b31d1b5e6f7f4e8b635a0653/tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "d1fc6f2b99d98050f32b90d5dca496fbb385182638ecb9ddc927a9b049886a1d"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_11_0_arm64.whl",
+      "url": "https://files.pythonhosted.org/packages/22/cc/3fd569baecab16246bde771eefe932288839434f0678d2c0d77e6dae2b17/tree_sitter_objectscript-1.11.0-cp38-abi3-macosx_11_0_arm64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "f44f6916b438490564f8fcac88a85453fd097974c2ba86632a55176f73672112"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+      "url": "https://files.pythonhosted.org/packages/aa/85/2343e48d8cbfaac781660e6e0343bd8bcd6649bdb14d6f2ece30992e2d49/tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "25c9518dbd3ecc6fd0112e3d88023197add42344e36ca6452c6918f4597bc12d"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/98/0d/50d7c194024fe87d4c21e5ed0a2e4969ae881b8dd514a8d13964a1c4b193/tree_sitter_objectscript-1.11.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "c4501ae3ce752b7cca176ce3bb65b64820b6a10a57282a8def8f28763096dbc4"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/97/37/8c5914bd32870f595d6c0083954e3f062a45c8c9c1d4bc97116272565f96/tree_sitter_objectscript-1.11.0-cp38-abi3-musllinux_1_2_x86_64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "831262e6e29c070eb4de43fb129b9e5819ede15e18fe4d9c2ade21cf8b9aa253"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/9a/62/c196c7ea2a5921cd4cb7231d578bfff64b3619c47496f59c84cb01b9b2de/tree_sitter_objectscript-1.11.0-cp38-abi3-win_amd64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "c27dd7fb736f5da50b6932ee3e8bbefde08641263e9cd39f6ce171d3650c9d65"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0-cp38-abi3-win_arm64.whl",
+      "url": "https://files.pythonhosted.org/packages/09/66/77fcf738ef52cc9fff748ac199ed1f52486c14ba6f2e5a0b2ca46ff317fa/tree_sitter_objectscript-1.11.0-cp38-abi3-win_arm64.whl",
+      "yanked": false,
+      "digests": {
+        "sha256": "62d6a096e3bef3579cb01e045a7a6005f1fe6e9299c3e6237580ae4b29b5f473"
+      }
+    },
+    {
+      "filename": "tree_sitter_objectscript-1.11.0.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/89/d4/3397b18d51b7e89234659344dc6ecb6f1fbe2d6a4cc3c3a437ef434d4642/tree_sitter_objectscript-1.11.0.tar.gz",
+      "yanked": false,
+      "digests": {
+        "sha256": "39dff87518e5f90784eca1bf2cc41cb952b385142843f9b5fafb45724550683c"
+      }
+    }
+  ]
+}

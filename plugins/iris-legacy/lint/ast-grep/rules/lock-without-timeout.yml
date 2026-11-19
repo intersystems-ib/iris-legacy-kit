@@ -1,0 +1,11 @@
+id: lock-without-timeout
+language: cosroutine
+severity: warning
+message: "LOCK without a timeout waits forever if another process holds the lock."
+note: "Use LOCK +^NAME(...):seconds and test $TEST (ELSE / IF '$TEST) to handle the failure."
+rule:
+  kind: command_lock_argument
+  not:
+    any:
+      - has: { kind: timeout }
+      - regex: '^-'

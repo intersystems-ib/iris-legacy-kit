@@ -1,0 +1,7 @@
+id: naked-global-reference
+valid:
+  - " S X=^ACCT(ID)\n"
+  - " S X=$G(^ACCT(ID,\"H\",1))\n"
+invalid:
+  - " S ID=$O(^ACCT(ID)) S X=^(ID)\n"
+  - " S ^ACCT(1)=\"A\",^(2)=\"B\"\n"

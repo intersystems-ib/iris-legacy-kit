@@ -1,0 +1,7 @@
+id: goto-label-offset
+valid:
+  - " G LISTBODY\n"
+  - " S L=$T(TABLE+I)\n"
+invalid:
+  - " G LIST+2\n"
+  - " D LIST+2^ABC\n"

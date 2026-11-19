@@ -1,0 +1,20 @@
+ROUTINE OMPAY
+OMPAY ;ACME/JRB - PAYMENTS ;07/20/1998
+ ;;1.0;OMS;**10,18**;Mar 12, 1998
+ Q
+ ;
+POST ; post a payment against an invoice
+ ; in:  INV, AMT, METH (optional, default TRANSFER)
+ ; out: ERR if it failed
+ N X,P,N
+ K ERR S U="^"
+ S X=$G(^INVC(+$G(INV))) I X="" S ERR="NO SUCH INVOICE" Q
+ I $P(X,U,7)="P" S ERR="INVOICE IS ALREADY PAID" Q
+ I +$G(AMT)'>0 S ERR="AMOUNT MUST BE POSITIVE" Q
+ L +^INVC(INV):5 E  S ERR="INVOICE IS LOCKED BY ANOTHER USER" Q
+ S N=$O(^INVC(INV,"P",""),-1)+1,^INVC(INV,"P",N)=(+$H)_U_AMT_U_$G(METH,"TRANSFER")
+ S P=$P(^INVC(INV),U,6)+AMT,$P(^INVC(INV),U,6)=P
+ I P'<$P(^INVC(INV),U,4) S $P(^INVC(INV),U,7)="P" K ^INVCX("O",INV)
+ L -^INVC(INV)
+ D AUD^OMUTL("PAY",INV_"/"_N)
+ Q

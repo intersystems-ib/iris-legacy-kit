@@ -1,0 +1,23 @@
+id: quit-inside-open-transaction
+language: cosroutine
+severity: warning
+message: "QUIT after TSTART with no TCOMMIT or TROLLBACK on this path: the transaction stays open (TLEVEL above 0) and its work is rolled back or committed later, by whoever ends it."
+note: "Roll back (TROLLBACK 1) or commit before quitting. Checked inside procedures only, statement by statement; branches and GOTOs are not followed."
+rule:
+  kind: command_quit
+  inside:
+    kind: statement
+    stopBy: end
+    all:
+      - inside: { kind: procedure }
+      - follows:
+          kind: statement
+          stopBy: end
+          has: { kind: command_tstart, stopBy: end }
+      - not:
+          follows:
+            kind: statement
+            stopBy: end
+            has: { kind: command_tcommit, stopBy: end }
+      - not:
+          has: { kind: command_trollback, stopBy: end }

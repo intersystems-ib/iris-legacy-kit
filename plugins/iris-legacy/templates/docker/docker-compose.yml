@@ -1,0 +1,58 @@
+# __NAME__: a development IRIS and its Web Gateway, written by /iris-legacy:bootstrap.
+#
+# Start with scripts/up.sh, not plain `docker compose up`: the script also loads the source
+# directories into namespace __NS__ and checks that Atelier REST answers through the gateway.
+#
+# Edition is chosen in .env (see .env.example):
+#   community (default) COMPOSE_FILE=docker-compose.yml
+#   licensed            COMPOSE_FILE=docker-compose.yml:docker-compose.licensed.yml (adds iris.key)
+#
+# No durable %SYS on purpose: `scripts/down.sh` + `scripts/up.sh` rebuilds code from the repo.
+# Data held only in this IRIS is lost then; load it again from your own seed or export.
+name: __NAME__
+
+services:
+
+  iris:
+    build:
+      context: ./docker/iris
+      args:
+        IMAGE: ${IRIS_IMAGE:?set IRIS_IMAGE in .env - copy .env.example}
+    image: __NAME__-iris:local
+    container_name: __NAME__-iris
+    # Keep the service name `iris`: docker/webgateway/CSP.ini reaches the backend by it.
+    hostname: iris
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${IRIS_SUPERSERVER_PORT:-__SS_PORT__}:1972"   # SuperServer; Atelier REST goes through the gateway
+    # No source mount: scripts/load.sh copies the source directories of whichever checkout runs
+    # it into the container, so a clone or worktree loads its own files.
+    environment:
+      - ISC_CPF_MERGE_FILE=/opt/irisbuild/merge.cpf
+    healthcheck:
+      test: ["CMD", "/usr/irissys/dev/Cloud/ICM/waitReady.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 120s
+
+  # Serves the Management Portal and Atelier REST (VS Code, the MCP server, the edit hook).
+  # Configured entirely by the mounted CSP.ini / CSP.conf.
+  webgateway:
+    image: containers.intersystems.com/intersystems/webgateway:${WEBGATEWAY_TAG:-__IRIS_TAG__}
+    container_name: __NAME__-webgw
+    hostname: webgateway
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${WEBGATEWAY_HTTP_PORT:-__WEB_PORT__}:80"
+    environment:
+      - ISC_CSP_INI_FILE=/webgateway-config/CSP.ini
+      - ISC_CSP_CONF_FILE=/webgateway-config/CSP.conf
+      - ISC_DATA_DIRECTORY=/webgateway-config/durable
+    volumes:
+      - ./docker/webgateway:/webgateway-config
+    depends_on:
+      iris:
+        condition: service_healthy

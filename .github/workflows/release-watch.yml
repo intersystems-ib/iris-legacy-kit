@@ -1,0 +1,79 @@
+# Release watch: once a week, compare the pinned tools with their latest releases. For each update,
+# install the new pin on the runner (setup.sh downloads it and checks the published sha256), run
+# the offline tests, and open a pin-bump PR with the results. A PR already proposed (its branch is
+# on origin) is not proposed again. The live IRIS checks of tests/hooks.sh skip here: no IRIS.
+#
+# Needs, in the repository settings: Actions enabled, and under Actions > General > Workflow
+# permissions, "Allow GitHub Actions to create and approve pull requests".
+name: release-watch
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare the pins with the latest releases
+        id: watch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          tools/release-watch.sh > "$RUNNER_TEMP/report.txt" 2>&1
+          rc=$?
+          tools/release-watch.sh --updates > "$RUNNER_TEMP/updates.txt" 2>/dev/null
+          cat "$RUNNER_TEMP/report.txt"
+          { echo '### Release watch'; echo '```'; cat "$RUNNER_TEMP/report.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          [[ $rc == 0 || $rc == 1 || $rc == 10 ]]
+
+      - name: Test and propose each update
+        if: steps.watch.outputs.rc != '0'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          while read -r tool version; do
+            [[ -n "$tool" ]] || continue
+            branch="pin/$tool-$version"
+            if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+              echo "$branch is already proposed"
+              continue
+            fi
+            tools/release-watch.sh --write "$tool"
+            out="$RUNNER_TEMP/tests-$tool.txt"
+            {
+              echo "GitHub Actions, linux-x86_64, no IRIS (the live compile checks skip)"
+              echo '$ CLAUDE_PLUGIN_DATA=.test-data plugins/iris-legacy/scripts/setup.sh'
+              CLAUDE_PLUGIN_DATA="$PWD/.test-data" plugins/iris-legacy/scripts/setup.sh 2>&1; echo "exit $?"
+              echo '$ tests/smoke.sh'
+              tests/smoke.sh 2>&1 | grep -E '^(PASS|FAIL|SKIP|TESTS)'; echo "exit ${PIPESTATUS[0]}"
+              echo '$ tests/hooks.sh (failures and the summary only)'
+              tests/hooks.sh 2>&1 | grep -E '^(FAIL|SKIP|TESTS)'; echo "exit ${PIPESTATUS[0]}"
+            } > "$out"
+            cat "$out"
+            git checkout -q -- plugins/iris-legacy/versions.json
+            RELEASE_WATCH_TESTS="$out" tools/release-watch.sh --pr --push "$tool"
+          done < "$RUNNER_TEMP/updates.txt"
+
+      - name: Fail when a tool could not be checked
+        if: steps.watch.outputs.rc == '1'
+        run: |
+          echo "::error::release-watch could not resolve every tool; see the report in the first step"
+          exit 1

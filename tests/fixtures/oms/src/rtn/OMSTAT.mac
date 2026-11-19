@@ -1,0 +1,30 @@
+ROUTINE OMSTAT
+OMSTAT ; OMS customer statistics
+ ; 2004-03-09 MK  for the account managers' monthly review
+ quit
+
+CUSTSTAT(cid, st) public {
+    // st("orders"), st("revenue"), st("open") = unpaid invoice balance, st("last") = $H of the last order
+    kill st
+    set st("orders") = 0, st("revenue") = 0, st("open") = 0, st("last") = ""
+    set ord = ""
+    for {
+        set ord = $order(^SORDX("C", cid, ord))
+        quit:ord=""
+        set x = ^SORD(ord)
+        continue:$piece(x, "^", 3)="X"
+        set st("orders") = st("orders") + 1
+        set st("revenue") = st("revenue") + $piece(x, "^", 4)
+        if $piece(x, "^", 2) > st("last") {
+            set st("last") = $piece(x, "^", 2)
+        }
+    }
+    set inv = ""
+    for {
+        set inv = $order(^INVCX("C", cid, inv))
+        quit:inv=""
+        set x = ^INVC(inv)
+        continue:$piece(x, "^", 7)="P"
+        set st("open") = st("open") + $piece(x, "^", 4) - $piece(x, "^", 6)
+    }
+}

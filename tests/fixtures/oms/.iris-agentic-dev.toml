@@ -1,0 +1,7 @@
+# Fixture connection: nothing listens on this port, so the compile hook must report that it
+# could not reach IRIS. tests/hooks.sh writes a live variant when the OMS demo stack answers.
+host = "localhost"
+web_port = 1
+namespace = "OMS"
+username = "_SYSTEM"
+password = "SYS"
