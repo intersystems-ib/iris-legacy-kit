@@ -16,6 +16,10 @@
       "linux-x86_64": {
         "name": "iris-interop-dev-linux-x64-musl",
         "sha256": "59659e3b1c8c07fd8f3afba0cac80bf5cc68964851289b563cdec26fb365a788"
+      },
+      "linux-aarch64": {
+        "name": "iris-interop-dev-linux-arm64-musl",
+        "sha256": "b934d57fa6c037cae8c545b5c15cba74bd08d75a779a82296edb7da9a880e452"
       }
     }
   },
