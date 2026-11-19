@@ -47,25 +47,25 @@
     }
   },
   "ast-grep": {
-    "version": "0.51.1",
+    "version": "0.51.3",
     "issues": "ast-grep/ast-grep",
     "url": "https://github.com/ast-grep/ast-grep/releases/download/{version}/{asset}",
     "assets": {
       "darwin-arm64": {
         "name": "app-aarch64-apple-darwin.zip",
-        "sha256": "a95772097b4d02bd9d45ed63b300c37041ae3c36632b3bf19250cc7c10187dc4"
+        "sha256": "7954eab1e2803d1485f263377be7f359db6d3915312b5d773cd575eb009330b1"
       },
       "darwin-x86_64": {
         "name": "app-x86_64-apple-darwin.zip",
-        "sha256": "302b92868fa1b0439f0927b1f31668e03636b12a8e646fb1a3cd8de816c78242"
+        "sha256": "af04ed50179e51316a0139b8bb39502a3841d6c8e9fd9a4bac40987a8c7c3acd"
       },
       "linux-x86_64": {
         "name": "app-x86_64-unknown-linux-gnu.zip",
-        "sha256": "42514f77ae0c8a25d7d32154d31d3e7e16f3ab894f8ce76ce417de234ee49157"
+        "sha256": "22803eb0c5bf83164fb7fd76d4721d355ecf0c8466ef47342c1ec7d80897ca47"
       },
       "linux-aarch64": {
         "name": "app-aarch64-unknown-linux-gnu.zip",
-        "sha256": "db02fae2d8eace5fc40c55242068882452dd03eab38a1d950d5fd981cf112926"
+        "sha256": "5b44fd68e78744934b359b07badce347d4197ed50b341d50f1f99d056ecedb08"
       }
     }
   },
