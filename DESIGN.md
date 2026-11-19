@@ -140,7 +140,7 @@ sanitizer, and the release watch. Checks against a live IRIS run only when one a
 - Permission policy cannot ship in a plugin; the bootstrap writes it into the project settings.
 - Plugins with a top-level `bin/` are rejected on claude.ai and Cowork, so the tools install into
   `${CLAUDE_PLUGIN_DATA}` instead.
-- The release watch names platform gaps but does not fill them: the kit pins no linux-aarch64
-  build of iris-interop-dev yet.
+- The release watch names platform gaps but does not fill them: a new platform is pinned by hand,
+  once its binary has been run there.
 - `detect` proposes every top-level folder that holds ObjectScript with headers; the skill shows
   the list and the user chooses (`--source-dir` overrides it).

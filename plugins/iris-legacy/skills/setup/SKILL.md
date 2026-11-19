@@ -27,5 +27,4 @@ A session-start hook does this automatically; use this skill when it reported a 
    show the message and stop: a checksum mismatch means the download is not the pinned release,
    so never work around it by downloading another version or skipping the check.
 
-Requirements: `jq`, `curl` and `unzip` on the machine. There is no iris-interop-dev release for
-Linux arm64 yet; on that platform the user has to provide the binary.
+Requirements: `jq`, `curl` and `unzip` on the machine.
