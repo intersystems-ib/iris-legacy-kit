@@ -49,7 +49,8 @@ Tests are `%UnitTest.TestCase` subclasses; only methods named `Test*` run.
 <!--etn-->
 - Code that traps errors with `__ERROR_TRAP__` logs them to the **application error log**,
   global `^ERRORS` in `__NS__`: `^ERRORS(day, n, "*STACK", level, ...)`, with the error text at
-  `"*STACK", 0, "V", "$ZE"`. List recent errors with `iris_execute`:
+  `"*STACK", 0, "V", "$ZE"`. List recent errors with `iris_debug` `error_logs`, or with
+  `iris_execute`:
 
   ```objectscript
   set d=$order(^ERRORS(""),-1) for  { quit:d=""  set n="" for  { set n=$order(^ERRORS(d,n),-1) quit:n=""  write $zdate(d,3)," #",n,"  ",$get(^ERRORS(d,n,"*STACK",0,"V","$ZE")),! } set d=$order(^ERRORS(d),-1) }
@@ -57,7 +58,9 @@ Tests are `%UnitTest.TestCase` subclasses; only methods named `Test*` run.
 
 <!--/etn-->
 - An error location `LABEL+n^RTN` counts lines in the compiled `RTN.int`, which drops blank
-  lines. Count from `LABEL` in the `.int` (`iris_doc` `RTN.int`), not in the source file.
+  lines. `iris_debug` `map_int` with the error text (e.g. `<UNDEFINED>LABEL+2^RTN *X`) returns the
+  `.int` line and the `.mac` line it came from. By hand, count from `LABEL` in the `.int`
+  (`iris_doc` `RTN.int`), not in the source file.
 
 ### IRIS for this project
 
