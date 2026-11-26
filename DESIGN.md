@@ -14,7 +14,7 @@ iris-legacy-kit/
   .claude-plugin/marketplace.json        the marketplace (one plugin, versioned)
   plugins/iris-legacy/
     .claude-plugin/plugin.json           name, version, author, repository
-    .mcp.json                            MCP server `iris`: iris-interop-dev, routines profile
+    .mcp.json                            MCP server `iris`: iris-interop-dev, the project's profile
     hooks/hooks.json                     SessionStart: install the tools, unfiled findings
                                          PostToolUse on edits: compile, then lint
     skills/
@@ -42,10 +42,10 @@ iris-legacy-kit/
 | `CLAUDE.md` | template | yes, filled by the bootstrap |
 | Compile hook | yes, reads the project's connection file through `CLAUDE_PROJECT_DIR` | no |
 | Lint hook (ascot filter + new smells only) | yes, filter overridable in the kit config | baseline only |
-| MCP server (iris-interop-dev, `routines`) | yes | connection file `.iris-agentic-dev.toml` |
+| MCP server (iris-interop-dev, `routines` unless the kit config names another profile) | yes | connection file `.iris-agentic-dev.toml` |
 | Binaries (iris-interop-dev, ascot and its IRIS declarations, ast-grep, grammars) | installed by a SessionStart hook into `${CLAUDE_PLUGIN_DATA}`, checksums from `versions.json` | no |
 | Global map, smell rules | yes | no |
-| Permissions (allow tests and read-only, deny production hosts) | template | yes, `.claude/settings.json` |
+| Permissions (allow tests and read-only, deny production hosts, hide the tools of IRIS servers under the standard names) | template | yes, `.claude/settings.json` |
 | Marketplace + plugin enablement for teammates | no | yes, `extraKnownMarketplaces` + `enabledPlugins` in `.claude/settings.json` |
 | Project globals skill | the recipe (`map-globals`) | generated per project |
 | Docker stack | template | when the project picks Docker |
@@ -53,8 +53,17 @@ iris-legacy-kit/
 
 Kit config: one small file in the project, `.claude/iris-legacy.json`: source directories,
 environment (docker or existing), test package, error trap label (`ERR^APPUTL` style) and log
-global, the IRIS container (docker), publish steps, lint switches, codes and declarations. The
-namespace lives in the connection file only.
+global, the IRIS container (docker), publish steps, lint switches, codes and declarations, and
+the MCP server's profile (`toolset`). The namespace lives in the connection file only.
+
+**One IRIS server per project.** The kit's server is the project's IRIS server. The profile is a
+project setting, read by `mcp.sh` from the kit config and never from `IRIS_TOOLSET`, so that a
+variable set for another server cannot change it. Other IRIS servers are hidden rather than
+disabled. `/mcp` disables a server per machine, in `~/.claude.json`.
+`disabledMcpjsonServers` covers only servers from a project `.mcp.json`. A deny rule without a
+tool name (`mcp__iris-interop-dev`) hides every tool of that server, whatever scope registered
+it, and it travels with the project. Measured on Claude Code 2.1.289: with the rule, none of the
+36 tools of a user-scope `iris-interop-dev` were in the session's tool list.
 
 ## 3. Bootstrap (`/iris-legacy:bootstrap`)
 
@@ -138,6 +147,12 @@ sanitizer, and the release watch. Checks against a live IRIS run only when one a
 - Skills run kit scripts by their installed path (`${CLAUDE_PLUGIN_ROOT}/scripts/...`), which a
   project allow list cannot name in advance, so those commands ask for permission.
 - Permission policy cannot ship in a plugin; the bootstrap writes it into the project settings.
+- A deny rule hides another IRIS server's tools, but the server's process still starts. Only the
+  two standard names are denied up front. The bootstrap names any other IRIS server it finds, but
+  only on the machine where it runs; on other machines, a server under another name is not caught.
+- A project with both legacy code and productions needs one profile with both tool sets
+  (iris-interop-dev#579). Until the kit pins a binary that has it, such a project needs two
+  servers.
 - Plugins with a top-level `bin/` are rejected on claude.ai and Cowork, so the tools install into
   `${CLAUDE_PLUGIN_DATA}` instead.
 - The release watch names platform gaps but does not fill them: a new platform is pinned by hand,

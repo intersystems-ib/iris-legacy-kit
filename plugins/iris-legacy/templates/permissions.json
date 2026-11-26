@@ -1,5 +1,5 @@
 {
-  "//": "Merged into the project .claude/settings.json by /iris-legacy:bootstrap. Allowed without a prompt: the MCP tools that only read (annotated readOnly by iris-interop-dev), running tests, and read-only git. iris_execute, iris_doc (it can write) and iris_compile still ask.",
+  "//": "Merged into the project .claude/settings.json by /iris-legacy:bootstrap. Allowed without a prompt: the MCP tools that only read (annotated readOnly by iris-interop-dev), running tests, and read-only git. iris_execute, iris_doc (it can write) and iris_compile still ask. Denied: the tools of an IRIS MCP server registered under the names the iris-interop-dev and iris-agentic-dev READMEs use, often at user scope. The kit provides the project's IRIS server, and a second one shows Claude the same tools twice; a deny rule without a tool name hides all of that server's tools, and it reaches teammates through git, which disabling the server in /mcp does not.",
   "allow": [
     "mcp__plugin_iris-legacy_iris__check_config",
     "mcp__plugin_iris-legacy_iris__compare_document",
@@ -23,6 +23,8 @@
     "Read(./.claude/settings.local.json)",
     "Read(./iris.key)",
     "Read(./**/*.key)",
-    "Read(./**/*.ISCkey)"
+    "Read(./**/*.ISCkey)",
+    "mcp__iris-interop-dev",
+    "mcp__iris-agentic-dev"
   ]
 }

@@ -72,8 +72,11 @@ Optional: `--source-dir DIR` (repeat; default the detected folders), `--test-pac
 like production (`prod`, `prd`, `live`, `%SYS`). If the user confirms that it is not production
 (a namespace such as `PRODUCTS`), add `--not-production`; never add it on your own.
 
-Show the user the list the script prints (written and kept). If it notes an `.mcp.json` with its
-own IRIS server, suggest removing that entry: the kit provides the server.
+Show the user the list the script prints (written and kept). The kit provides the project's IRIS
+server, and the settings it writes hide the tools of a server named `iris-interop-dev` or
+`iris-agentic-dev`. If it notes another IRIS server (in `.mcp.json`, or at user or local scope),
+pass its advice on: remove that server, or add the deny rule it names. Two servers show Claude
+the same tools twice.
 
 ## 4. Bring IRIS up and prove the loop
 

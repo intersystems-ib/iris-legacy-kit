@@ -2,10 +2,7 @@
   "mcpServers": {
     "iris": {
       "command": "${CLAUDE_PLUGIN_ROOT}/scripts/mcp.sh",
-      "args": ["${CLAUDE_PROJECT_DIR}"],
-      "env": {
-        "IRIS_TOOLSET": "routines"
-      }
+      "args": ["${CLAUDE_PROJECT_DIR}"]
     }
   }
 }

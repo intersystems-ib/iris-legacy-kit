@@ -15,11 +15,15 @@ fails=0
 check() { if eval "$2"; then echo "PASS $1"; else echo "FAIL $1"; fails=$((fails + 1)); fi; }
 
 cd "$PROJ" && git init -q
+# Untouched means unchanged by this test: a user who added the marketplace for themselves already
+# has its name in their settings, and that is not what this test is about.
+user_settings() { cat "$HOME/.claude/settings.json" 2>/dev/null | cksum; }
+before=$(user_settings)
 check "marketplace added at project scope" 'claude plugin marketplace add "$KIT" --scope project >"$PROJ/m.out" 2>&1'
 check "plugin installed at project scope" 'claude plugin install iris-legacy@iris-legacy-kit --scope project >"$PROJ/i.out" 2>&1'
 cat "$PROJ/m.out" "$PROJ/i.out"
 check "project settings enable the plugin" 'jq -e ".enabledPlugins[\"iris-legacy@iris-legacy-kit\"] == true" .claude/settings.json >/dev/null'
-check "user settings untouched" '! grep -q "iris-legacy" "$HOME/.claude/settings.json" 2>/dev/null'
+check "user settings untouched" '[[ "$(user_settings)" == "$before" ]]'
 claude plugin details iris-legacy >"$PROJ/d.out" 2>&1
 cat "$PROJ/d.out"
 check "details list the skills" 'for s in legacy-routines-globals setup lint bootstrap map-globals characterize report-upstream; do grep -q "$s" "$PROJ/d.out" || exit 1; done'

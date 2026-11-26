@@ -148,14 +148,29 @@ else
 fi
 
 echo "== MCP server entry point"
-tools=$( (printf '%s\n' \
-  '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"kit-test","version":"0"}}}' \
-  '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
-  '{"jsonrpc":"2.0","id":2,"method":"tools/list"}'; sleep 3) \
-  | "$P/scripts/mcp.sh" "$PROJ" 2>"$WORK/mcp.err" | jq -r 'select(.id == 2) | .result.tools[].name' 2>/dev/null)
-RC=0; OUT="$tools"; ERR=""
-expect "routines profile serves the language tools" 0 '^iris_execute$' '^iris_doc$' '^iris_test$'
-if grep -q '^iris_production' <<<"$tools"; then echo "FAIL no interoperability tools"; fails=$((fails + 1)); else echo "PASS no interoperability tools"; fi
+mcp_tools() {  # the tool names the server lists for the fixture project
+  (printf '%s\n' \
+    '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"kit-test","version":"0"}}}' \
+    '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
+    '{"jsonrpc":"2.0","id":2,"method":"tools/list"}'; sleep 3) \
+    | "$P/scripts/mcp.sh" "$PROJ" 2>"$WORK/mcp.err" | jq -r 'select(.id == 2) | .result.tools[].name' 2>/dev/null
+}
+lacks() {  # lacks NAME REGEX: no line of OUT matches REGEX
+  if grep -qE -- "$2" <<<"$OUT"; then echo "FAIL $1"; fails=$((fails + 1)); else echo "PASS $1"; fi
+}
+toolset() { jq --arg t "$1" '.toolset = $t' "$PROJ/.claude/iris-legacy.json" >"$WORK/conf" && cp "$WORK/conf" "$PROJ/.claude/iris-legacy.json"; }
+# IRIS_TOOLSET as a user-scope server would have it: the kit's server must not take it.
+RC=0; OUT=$(IRIS_TOOLSET=interop mcp_tools); ERR=""
+expect "routines profile by default: language and global tools" 0 '^iris_execute$' '^iris_doc$' '^iris_test$' '^iris_global$'
+lacks "no interoperability tools, though IRIS_TOOLSET=interop is inherited" '^iris_production'
+toolset interop
+RC=0; OUT=$(mcp_tools); ERR=""
+expect "toolset from the kit config: interop serves the production tools" 0 '^iris_production$' '^iris_doc$'
+lacks "toolset from the kit config: interop has no global tools" '^iris_global$'
+toolset routnes
+RC=0; OUT=$("$P/scripts/mcp.sh" "$PROJ" </dev/null 2>&1); RC=$?
+expect "a toolset the binary lacks: refuses to start, naming the profiles" 1 'routnes' 'Valid profiles: .*routines'
+reset
 RC=0; OUT=$("$P/scripts/mcp.sh" "$WORK/nowhere" </dev/null 2>&1); RC=$?
 expect "no connection file: refuses to start" 1 'no \.iris-agentic-dev\.toml'
 
