@@ -326,7 +326,8 @@ write() {
         environment: $mode,
         tests: { package: $pkg },
         errors: ({ trap: (if $trap == "" then null else $trap end), log: (if $etn then "^ERRORS" else null end) } | with_entries(select(.value != null))),
-        lint: { ascot: true, smells: true }
+        lint: { ascot: true, smells: true },
+        toolset: "routines"
       } + (if $pub == [] then {} else { publish: $pub } end)
         + (if $mode == "docker" then { container: $c } else {} end)' "${dirs[@]}" >"$CONF"
     wrote+=(.claude/iris-legacy.json)
@@ -380,13 +381,32 @@ write() {
     done < <(find "$TPL/docker" -type f | sort)
   fi
 
-  # A project .mcp.json that starts its own iris-interop-dev would run beside the kit's server.
-  local other=""
-  [[ -f "$ROOT/.mcp.json" ]] && other=$(jq -r '.mcpServers // {} | to_entries[] | select((.value.command // "") + ((.value.args // []) | join(" ")) | test("iris")) | .key' "$ROOT/.mcp.json" 2>/dev/null)
+  # Other IRIS servers that start beside the kit's: the project's .mcp.json, and the user and local
+  # scopes in Claude Code's own config. The deny rules from the permissions template hide the
+  # standard names; any other name is for the user to remove or deny.
+  local cc="${CLAUDE_CONFIG_DIR:-$HOME}/.claude.json" others denied name where
+  iris_servers() {  # iris_servers WHERE < JSON with .mcpServers: "NAME<TAB>WHERE" per IRIS server
+    jq -r --arg w "$1" '.mcpServers // {} | to_entries[]
+      | select(((.value.command // "") + " " + ((.value.args // []) | join(" "))) | test("iris"; "i"))
+      | "\(.key)\t\($w)"' 2>/dev/null
+  }
+  others=$({
+    [[ -f "$ROOT/.mcp.json" ]] && iris_servers .mcp.json <"$ROOT/.mcp.json"
+    [[ -f "$cc" ]] && iris_servers "user scope" <"$cc"
+    [[ -f "$cc" ]] && jq --arg r "$ROOT" '.projects[$r] // {}' "$cc" 2>/dev/null | iris_servers "local scope"
+  })
+  denied=$(jq -r '.deny[] | select(startswith("mcp__")) | ltrimstr("mcp__")' "$TPL/permissions.json")
 
   echo "Written:"; printf '  %s\n' "${wrote[@]}"
   ((${#kept[@]})) && { echo "Kept (already there, not changed):"; printf '  %s\n' "${kept[@]}"; }
-  [[ -n "$other" ]] && echo "Note: .mcp.json starts its own IRIS server ($other). The kit provides one; remove it there to avoid two."
+  while IFS=$'\t' read -r name where; do
+    [[ -n "$name" ]] || continue
+    if grep -qxF "$name" <<<"$denied"; then
+      echo "Note: the IRIS MCP server $name ($where) also starts here; the deny rule in .claude/settings.json hides its tools, so Claude sees only the kit's."
+    else
+      echo "Note: the IRIS MCP server $name ($where) also starts here, and the kit provides one. Remove it, or add \"mcp__$name\" to permissions.deny in .claude/settings.json."
+    fi
+  done <<<"$others"
   if [[ $MODE == existing ]]; then
     echo "Next: each developer sets IRIS_USERNAME and IRIS_PASSWORD in .claude/settings.local.json:"
     echo '  { "env": { "IRIS_USERNAME": "...", "IRIS_PASSWORD": "..." } }   (then restart Claude Code)'

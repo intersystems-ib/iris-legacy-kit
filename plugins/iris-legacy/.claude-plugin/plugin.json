@@ -1,7 +1,7 @@
 {
   "name": "iris-legacy",
   "displayName": "IRIS legacy kit",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Claude Code for legacy InterSystems IRIS code (routines and globals): pinned tools, legacy-routine skills, and a compile-and-lint edit loop",
   "author": {
     "name": "Pierre-Yves Duquesnoy",

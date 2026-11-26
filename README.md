@@ -14,7 +14,8 @@ What it gives a Claude Code session in an IRIS code repository:
   counts) and reports the legacy smells the edit added (naked global references, `LOCK` without
   a timeout, `GOTO LABEL+n`, `QUIT` inside an open transaction, `$ZU`).
 - **An MCP server**, [iris-interop-dev](https://github.com/intersystems-ib/iris-interop-dev) with
-  its `routines` profile: run ObjectScript, read documents and globals, run unit tests.
+  its `routines` profile unless the project picks another: run ObjectScript, read documents and
+  globals, run unit tests. One IRIS server per project: see [below](#one-iris-server-per-project).
 - **Skills** for routine and global idioms, a bootstrap that sets a repository up, a global map
   (which labels read, set, kill or lock each global), characterization tests before a change,
   on-demand lint, and reporting tool defects upstream.
@@ -69,7 +70,8 @@ password = "SYS"          # Docker dev stack only. For an existing instance the 
   "tests": { "package": "App.Test" },
   "errors": { "trap": "ERR^APPUTL", "log": "^ERRORS" },
   "publish": [{ "dir": "ui", "command": "scripts/ui.sh" }],
-  "lint": { "ascot": true, "smells": true }
+  "lint": { "ascot": true, "smells": true },
+  "toolset": "routines"
 }
 ```
 
@@ -83,6 +85,39 @@ password = "SYS"          # Docker dev stack only. For an existing instance the 
   (default 3). Findings go to this repo's issues, sanitized and checked for duplicates first,
   unless `IRIS_LEGACY_REPORT_TO=upstream` is set (the kit owner's environment only, where
   `IRIS_LEGACY_FINDINGS` points at the owner's findings ledger).
+- `toolset` (optional, default `routines`): the MCP server's profile, any one the pinned
+  iris-interop-dev has (`routines`, `interop`, ...). An `IRIS_TOOLSET` in the environment does
+  not change it. A name the binary does not have stops the server, which then lists the ones it
+  has (in `/mcp`, the server shows as failed). Restart Claude Code after changing it.
+
+## One IRIS server per project
+
+The kit starts the project's IRIS MCP server. A second IRIS server in the same session shows
+Claude the same tools twice (`iris_doc`, `iris_compile`, `iris_execute`, ...) under two names,
+usually connected to the same namespace, and the permission rules cover only one of them. A server
+registered at user scope (`claude mcp add --scope user`) starts in every project on the machine,
+this one included.
+
+- The bootstrap writes `mcp__iris-interop-dev` and `mcp__iris-agentic-dev` into
+  `permissions.deny` in `.claude/settings.json`. These are the server names the iris-interop-dev
+  and iris-agentic-dev READMEs use. A deny rule without a tool name hides all of that server's
+  tools in this project. It reaches everyone who opens the project, which disabling the server in
+  `/mcp` does not: that only covers one machine. The server process itself still starts.
+- If it finds an IRIS server under another name (in `.mcp.json`, or at user or local scope), the
+  bootstrap names it and the deny rule to add.
+- Better still, keep IRIS servers out of user scope altogether and register them per project:
+  `claude mcp remove iris-interop-dev -s user`.
+
+### Projects that also have productions
+
+The [iris-interop-skills](https://github.com/intersystems-ib/iris-interop-skills) plugin is not
+tied to one server: its skills, agents and hooks name tools, never a server. In a project with both
+legacy code and productions, it can therefore run on the kit's server, provided that server also
+serves the interop tools: `"toolset": "interop,routines"`. That needs an iris-interop-dev that
+serves combined profiles
+([iris-interop-dev#579](https://github.com/intersystems-ib/iris-interop-dev/issues/579)). Until
+the kit pins one, such a project cannot run on a single server. Install iris-interop-skills with
+`--scope project` too, so that its hooks stay out of projects that do not use it.
 
 ## What it contains
 
@@ -92,7 +127,7 @@ password = "SYS"          # Docker dev stack only. For an existing instance the 
 | `plugins/iris-legacy/.claude-plugin/plugin.json` | Plugin manifest |
 | `plugins/iris-legacy/versions.json` | The only place versions and checksums are pinned: iris-interop-dev, ascot (with the IRIS declarations from its npm package), ast-grep, tree-sitter-objectscript |
 | `plugins/iris-legacy/hooks/hooks.json` | SessionStart: install the tools. PostToolUse on edits: compile hook, then lint hook |
-| `plugins/iris-legacy/.mcp.json` | MCP server `iris`: the pinned iris-interop-dev, `routines` profile, started in the project root |
+| `plugins/iris-legacy/.mcp.json` | MCP server `iris`: the pinned iris-interop-dev, started in the project root with the project's profile (`toolset`, default `routines`) |
 | `plugins/iris-legacy/scripts/setup.sh` | Installs and checks the pinned tools (`--check`, `--hook`) |
 | `plugins/iris-legacy/scripts/post-edit.sh` | Compile hook: upload and compile edits in the source dirs; compile errors back to Claude |
 | `plugins/iris-legacy/scripts/lint.sh` | Lint hook and on-demand checks: filtered ascot, plus legacy smells an edit adds; `--sarif` for CI |
@@ -119,11 +154,12 @@ CLAUDE_PLUGIN_DATA="$PWD/.test-data" plugins/iris-legacy/scripts/setup.sh    # o
 tests/smoke.sh     # manifests validate; a fresh install from the kept downloads; a re-run changes
                    # nothing; a wrong checksum is refused. A curl stand-in blocks any network fetch
 tests/install.sh   # marketplace add and install at project scope in a throwaway project; user settings untouched
-tests/hooks.sh     # 42 checks: the scripted agent mistakes from the OMS evaluation, SARIF output,
-                   # ascot never downloading, hook routing, the MCP server's tool list, the smell
-                   # rules; the 2 live compile checks run only when the OMS stack answers
-tests/bootstrap.sh # 58 checks: detect, convert, write in both modes, refusals, idempotence,
-                   # baseline; prove against the OMS stack when it answers
+tests/hooks.sh     # 45 checks: the scripted agent mistakes from the OMS evaluation, SARIF output,
+                   # ascot never downloading, hook routing, the MCP server's tool list and the
+                   # profile it takes from the kit config, the smell rules; the 2 live compile
+                   # checks run only when the OMS stack answers
+tests/bootstrap.sh # 68 checks: detect, convert, write in both modes, other IRIS servers named,
+                   # refusals, idempotence, baseline; prove against the OMS stack when it answers
 tests/skills.sh    # the global map against golden output; the characterize template in IRIS
 tests/report.sh    # 57 checks, offline: this month's real findings replay as duplicates; new ones
                    # file once, to the right repo per mode; customer names are blocked

@@ -16,7 +16,8 @@
 #     "container": "app-iris",                                docker: the IRIS container
 #     "publish": [{"dir": "ui", "command": "scripts/ui.sh"}], run after an edit under dir
 #     "lint": {"ascot": true, "smells": true, "ascotCodes": ["A6851", ...],
-#              "ascotIris": ["decl/app.d.json"]}                    declarations asked first
+#              "ascotIris": ["decl/app.d.json"]},                   declarations asked first
+#     "toolset": "routines"                                   the MCP server's profile (mcp.sh)
 #   }
 ROOT="$(cd "${CLAUDE_PROJECT_DIR:-$PWD}" 2>/dev/null && pwd -P)"
 CONF="$ROOT/.claude/iris-legacy.json"

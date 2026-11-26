@@ -12,6 +12,10 @@ B="$PLUGIN/scripts/bootstrap.sh"
 export CLAUDE_PLUGIN_DATA="${IRIS_LEGACY_TEST_DATA:-$KIT/.test-data}"
 WORK=$(mktemp -d "${TMPDIR:-/tmp}/iris-legacy-bootstrap.XXXXXX")
 trap 'rm -rf "$WORK"' EXIT
+# Claude Code's own config, where the bootstrap looks for other IRIS servers: a scratch one, so the
+# results do not depend on what the machine running the tests has registered.
+export CLAUDE_CONFIG_DIR="$WORK/claude-config"
+mkdir -p "$CLAUDE_CONFIG_DIR" && echo '{}' >"$CLAUDE_CONFIG_DIR/.claude.json"
 fails=0 skips=0
 check() { if eval "$2"; then echo "PASS $1"; else echo "FAIL $1"; fails=$((fails + 1)); fi; }
 skip() { echo "SKIP $1"; skips=$((skips + 1)); }
@@ -84,6 +88,9 @@ check "settings: marketplace and plugin" 'jq -e ".extraKnownMarketplaces[\"iris-
 check "settings: existing keys and rules kept" 'jq -e ".model == \"keep-me\" and (.permissions.allow | index(\"Bash(make:*)\"))" "$P/.claude/settings.json" >/dev/null'
 check "settings: read-only MCP tools allowed, iris_execute not" 'jq -e "(.permissions.allow | index(\"mcp__plugin_iris-legacy_iris__iris_search\")) and ((.permissions.allow | index(\"mcp__plugin_iris-legacy_iris__iris_execute\")) | not)" "$P/.claude/settings.json" >/dev/null'
 check "settings: credentials file unreadable" 'jq -e ".permissions.deny | index(\"Read(./.claude/settings.local.json)\")" "$P/.claude/settings.json" >/dev/null'
+check "settings: the standard IRIS servers' tools hidden" 'jq -e "(.permissions.deny | index(\"mcp__iris-interop-dev\")) and (.permissions.deny | index(\"mcp__iris-agentic-dev\"))" "$P/.claude/settings.json" >/dev/null'
+check "kit config: routines toolset" '[[ $(jq -r .toolset "$P/.claude/iris-legacy.json") == routines ]]'
+check "no other IRIS server, no note" '! grep -q "^Note: the IRIS MCP server" "$WORK/w1"'
 check "gitignore: local settings, findings, .env, key" 'for l in .claude/settings.local.json .claude/kit-findings.jsonl .claude/kit-findings/ .env iris.key; do grep -qxF "$l" "$P/.gitignore" || exit 1; done'
 check "stack files written" 'for f in docker-compose.yml docker-compose.licensed.yml .env.example docker/iris/Dockerfile docker/iris/iris.script docker/webgateway/CSP.ini scripts/up.sh scripts/load.sh scripts/test.sh; do [[ -f "$P/$f" ]] || exit 1; done'
 check "scripts executable and parse" 'for f in "$P"/scripts/*.sh; do [[ -x "$f" ]] && bash -n "$f" || exit 1; done'
@@ -120,6 +127,28 @@ check "CLAUDE.md: existing-instance sections only" 'grep -q "shared development 
 check "says how to set the credentials" 'grep -q "IRIS_PASSWORD" "$WORK/w3"'
 env -u IRIS_USERNAME -u IRIS_PASSWORD "$B" prove >"$WORK/p0" 2>&1; rc=$?
 check "prove refuses without credentials" '[[ $rc != 0 ]] && grep -q "FAIL credentials" "$WORK/p0"'
+
+echo "== write: other IRIS servers"
+fresh servers
+cat >"$P/.mcp.json" <<'EOF'
+{ "mcpServers": { "proj-iris": { "command": "/opt/iris-agentic-dev", "args": ["mcp"] },
+                  "docs": { "command": "npx", "args": ["some-docs-server"] } } }
+EOF
+jq -n --arg r "$(cd "$P" && pwd -P)" '{
+  mcpServers: { "iris-interop-dev": { command: "/opt/homebrew/bin/iris-interop-dev", args: ["mcp"] },
+                "playwright": { command: "npx", args: ["@playwright/mcp@latest"] } },
+  projects: { ($r): { mcpServers: { "my-iris": { command: "/usr/local/bin/iris-interop-dev", args: ["mcp"] } } } }
+}' >"$CLAUDE_CONFIG_DIR/.claude.json"
+"$B" write --mode existing --host iris-dev.example --web-port 80 --namespace APPDEV >"$WORK/s1" 2>&1; rc=$?
+check "write succeeds" '[[ $rc == 0 ]]'
+check "user scope, standard name: named as hidden by the deny rule" 'grep -q "server iris-interop-dev (user scope) also starts here; the deny rule" "$WORK/s1"'
+check "local scope, other name: its deny rule named" 'grep -q "server my-iris (local scope) also starts here.*\"mcp__my-iris\"" "$WORK/s1"'
+check "project .mcp.json: named" 'grep -q "server proj-iris (.mcp.json) also starts here.*\"mcp__proj-iris\"" "$WORK/s1"'
+check "servers that are not IRIS: no note" '! grep -qE "server (playwright|docs) " "$WORK/s1"'
+echo '{ not json' >"$CLAUDE_CONFIG_DIR/.claude.json"
+"$B" write --mode existing --host iris-dev.example --web-port 80 --namespace APPDEV >"$WORK/s2" 2>&1; rc=$?
+check "an unreadable Claude Code config: write still succeeds" '[[ $rc == 0 ]] && grep -q "server proj-iris (.mcp.json)" "$WORK/s2"'
+echo '{}' >"$CLAUDE_CONFIG_DIR/.claude.json"
 
 echo "== refusals"
 mkdir -p "$WORK/nogit/src" && cp "$KIT/tests/fixtures/oms/src/rtn/OMUTL.mac" "$WORK/nogit/src/"
